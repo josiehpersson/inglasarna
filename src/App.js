@@ -1,4 +1,3 @@
-import ResAppBar from './components/ResAppBar';
 import Navbar from './components/Navbar';
 
 function App() {
