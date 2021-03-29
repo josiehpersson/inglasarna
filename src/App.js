@@ -1,9 +1,11 @@
-import Navbar from './components/Navbar';
-import Booking_btn from './components/Booking_btn/Booking_btn'
+import Test from './components/Test';
+import BookingBtn from './components/BookingBtn';
+
 function App() {
   return (
-    <div className="App">
-      <Booking_btn />
+    <div className="App" >
+      <BookingBtn />
+      <Test />
     </div>
   );
 }
