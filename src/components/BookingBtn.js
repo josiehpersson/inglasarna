@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
    width: "231px",
    textTransform: "none",
    fontFamily: 'Spinnaker',
-   fontSize: "1.12rem",
+   fontSize: "18px",
    whiteSpace: 'nowrap',
    backgroundColor: '#296BE7',
    color: '#fff',
@@ -20,13 +20,12 @@ const useStyles = makeStyles((theme) => ({
    textAlign: 'left',
    paddingLeft: '0.5rem',
    zIndex: '2'
-   
  }
 }));
 
 export default function BookingBtn() {
   const classes = useStyles();
-  const matches = useMediaQuery('(max-width:400px)');
+  const matches = useMediaQuery('(max-width:900px)');
   let btn;
   if(matches){
     btn = <Button className={classes.Booking_btn} variant="contained">Boka gratis hembesök</Button>;
