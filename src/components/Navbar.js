@@ -4,7 +4,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {FiX} from 'react-icons/fi';
 import ResponsiveLogo from '../img/responsiveLogotype.png';
 import Logo from '../img/logotype.png';
-import { Autorenew, InsertChartOutlinedTwoTone } from '@material-ui/icons';
 
 const useStyles = makeStyles({
   '*' : {
@@ -24,7 +23,7 @@ const useStyles = makeStyles({
     paddingRight: 30,
     paddingLeft: 30,
     cursor: 'pointer',
-    fontSize: 24,
+    fontSize: 18,
     fontFamily: 'Spinnaker'
     
   },
@@ -74,12 +73,12 @@ const Navbar = () => {
   const classes=useStyles();
 
   useEffect(() => {
-    if(window.innerWidth <= 900){
+    if(window.innerWidth <= 1000){
       setDrawerActivate(true);
     }
 
     window.addEventListener('resize', () => {
-      if(window.innerWidth <= 900) {
+      if(window.innerWidth <= 1000) {
         setDrawerActivate(true);
       } else {
         setDrawerActivate(false);
