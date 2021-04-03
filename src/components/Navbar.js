@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     paddingRight: 30,
     paddingLeft: 30,
     cursor: 'pointer',
-    fontSize: 24,
+    fontSize: 18,
     fontFamily: 'Spinnaker'
     
   },
