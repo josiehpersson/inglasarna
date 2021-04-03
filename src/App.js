@@ -1,11 +1,11 @@
-import Test from './components/Test';
-import BookingBtn from './components/BookingBtn';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App" >
-      <BookingBtn />
-      <Test />
+    <div className="App">
+      <Navbar />
+      <Footer/>
     </div>
   );
 }
