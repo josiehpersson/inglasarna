@@ -1,13 +1,13 @@
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Slogan from './components/Slogan';
+import ThreePhotoGrid from './components/ThreePhotoGrid';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Slogan />
-      <Footer/>
+      {/* <Navbar /> */}
+      <ThreePhotoGrid />
+      {/* <Footer/> */}
     </div>
   );
 }
