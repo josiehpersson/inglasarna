@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {AppBar, Toolbar, List, ListItem, Typography, makeStyles, Grid, Drawer, IconButton, Button} from '@material-ui/core';
+import {AppBar, Menu, Toolbar, List, Fade, ListItem, Typography, makeStyles, Grid, Drawer, IconButton, Button, MenuItem} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import {FiX} from 'react-icons/fi';
+import {AiFillCaretDown} from 'react-icons/ai';
 import ResponsiveLogo from '../img/responsiveLogotype.png';
 import Logo from '../img/logotype.png';
-import { Autorenew, InsertChartOutlinedTwoTone } from '@material-ui/icons';
 
-const useStyles = makeStyles({
+
+const useStyles = makeStyles((theme) => ({
   '*' : {
     fontFamily: 'Spinnaker'
   },
@@ -25,7 +26,14 @@ const useStyles = makeStyles({
     paddingLeft: 30,
     cursor: 'pointer',
     fontSize: 18,
-    fontFamily: 'Spinnaker'
+    fontFamily: 'Spinnaker',
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    [theme.breakpoints.down("lg")]: {
+      fontSize: 12
+    }
     
   },
   sideBarIcon: {
@@ -47,9 +55,13 @@ const useStyles = makeStyles({
   navbarBtn: {
     backgroundColor: '#003595',
     color: 'white',
-    marginRight: 30,
-    marginLeft: 100,
-    fontFamily: 'Spinnaker'
+    marginRight: 5,
+    marginLeft: 'auto',
+    fontFamily: 'Spinnaker',
+    fontSize: 18,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: 12,
+    }
   },
   responsiveLogo: {
     height: '5vh',
@@ -65,12 +77,17 @@ const useStyles = makeStyles({
     alignItems: 'center',
     marginRight: 10,
     marginLeft: 'auto'
-  }
-});
+  },
+  caret: {
+    paddingLeft: 10
+  },
+}));
 
 const Navbar = () => {
   const [drawerActivate, setDrawerActivate] = useState(false);
   const [drawer, setDrawer] = useState(false);
+  const [productsAnchor, setProductsAnchor] = useState(null);
+  const [pricesAnchor, setPricesAnchor] = useState(null)
   const classes=useStyles();
 
   useEffect(() => {
@@ -86,6 +103,20 @@ const Navbar = () => {
       }
     });
   },[]);
+
+  const handleProductsClick = (e,) => {
+    setProductsAnchor(e.currentTarget);
+  }
+  const handlePricesClick = (e,) => {
+    setPricesAnchor(e.currentTarget);
+  }
+  const handleProductsClose = () => {
+    setProductsAnchor(null);
+  }
+
+  const handlePricesClose = () => {
+    setPricesAnchor(null);
+  }
 
   const createDrawer = () => {
     return(
@@ -153,9 +184,53 @@ const Navbar = () => {
           <img src={Logo} className={classes.logo} alt="inglasarnas logotyp" />
           <div className={classes.linkContainer}>
           <Typography className={classes.navlinks}>Varför inglasning?</Typography>
-          <Typography className={classes.navlinks}>Produkter</Typography>
+          <Typography
+          className={classes.navlinks}
+          aria-controls="menu1" 
+          aria-haspopup="true"
+          onClick={handleProductsClick}
+          >
+            Produkter
+            <AiFillCaretDown className={classes.caret} />
+            </Typography>
+            <Menu
+            id="menu1"
+            anchorEl={productsAnchor}
+            keepMounted
+            open={Boolean(productsAnchor)}
+            onClose={handleProductsClose}
+            TransitionComponent={Fade}
+            className={classes.miniMenu}
+            >
+              <MenuItem onClick={handleProductsClose}>Balkong</MenuItem>
+              <MenuItem onClick={handleProductsClose}>Terass</MenuItem>
+              <MenuItem onClick={handleProductsClose}>Skjutdörrar</MenuItem>
+              <MenuItem onClick={handleProductsClose}>Tillbehör</MenuItem>
+              <MenuItem onClick={handleProductsClose}>Garanti</MenuItem>
+            </Menu>
           <Typography className={classes.navlinks}>Hur går det till?</Typography>
-          <Typography className={classes.navlinks}>Kostnad</Typography>
+          <Typography
+          className={classes.navlinks}
+          aria-controls="menu2" 
+          aria-haspopup="true"
+          onClick={handlePricesClick}
+          >
+            Kostnad
+            <AiFillCaretDown className={classes.caret} />
+            </Typography>
+            <Menu
+            id="menu2"
+            anchorEl={pricesAnchor}
+            keepMounted
+            open={Boolean(pricesAnchor)}
+            onClose={handlePricesClose}
+            TransitionComponent={Fade}
+            >
+              <MenuItem onClick={handlePricesClose}>Privatperson</MenuItem>
+              <MenuItem onClick={handlePricesClose}>BRF</MenuItem>
+              <MenuItem onClick={handlePricesClose}>Företag</MenuItem>
+              <MenuItem onClick={handlePricesClose}>Finansiering</MenuItem>
+            </Menu>
           <Typography className={classes.navlinks}>Galleri</Typography>
           <Typography className={classes.navlinks}>Kontakt</Typography>
           <Button color="primary" variant="contained" className={classes.navbarBtn}>Få gratis offert</Button>
