@@ -1,7 +1,8 @@
-import React from 'react';
-import {useSpring, animated} from 'react-spring';
+import React, {useState, useEffect} from 'react';
+import {useSpring, animated, useTransition, config} from 'react-spring';
 import {makeStyles, GridList, GridListTile} from '@material-ui/core';
 import Slogan from './Slogan';
+import TransitionPhoto from './TransitionPhoto';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -57,11 +58,10 @@ const useStyles = makeStyles((theme) => ({
         height: '70%'
     }
 }))
+
 export default function ThreePhotoGrid() {
     const classes = useStyles();
-    const animation = useSpring({opacity: 1, from: {opacity: 0}})
 
-    const img1 = "https://images.unsplash.com/photo-1587502536263-5dda37cd33f0?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80";
  return(
  <div className={classes.root}>
      <Slogan  
@@ -71,14 +71,14 @@ export default function ThreePhotoGrid() {
      textClass={classes.sloganText}
      />
      <GridList className={classes.gridList} cols={3} rows={10}>
-         <GridListTile className={classes.tile} rows={10}>
-             <animated.img style={animation} src={img1} alt="nature" />
+         <GridListTile className={classes.tile} rows={10} cols={1}>
+             <img src="https://images.unsplash.com/photo-1587502536263-5dda37cd33f0?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="nature" />
          </GridListTile>
-         <GridListTile className={classes.tile} rows={10}>
-             <animated.img style={animation}  src={img1} alt="nature" />
+         <GridListTile className={classes.tile} rows={10} cols={1}>
+         <img src="https://images.unsplash.com/photo-1587502536263-5dda37cd33f0?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="nature" />
          </GridListTile>
-         <GridListTile className={classes.tile} rows={10}>
-             <animated.img style={animation}  src={img1} alt="nature" />
+         <GridListTile className={classes.tile} rows={10} cols={1}>
+         <img src="https://images.unsplash.com/photo-1587502536263-5dda37cd33f0?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="nature" />
          </GridListTile>
      </GridList>
     </div>
