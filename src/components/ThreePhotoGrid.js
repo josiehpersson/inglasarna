@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useSpring, animated, useTransition, config} from 'react-spring';
 import {makeStyles, GridList, GridListTile} from '@material-ui/core';
 import Slogan from './Slogan';
-import TransitionPhoto from './TransitionPhoto';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
