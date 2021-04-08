@@ -1,6 +1,5 @@
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
-import ThreePhotoGrid from './components/ThreePhotoGrid';
 
 import {
   makeStyles,
@@ -57,7 +56,6 @@ function App() {
       <Navbar />
       
       <Footer/>
-master
     </div>
     </ThemeProvider>
   );
