@@ -73,12 +73,12 @@ const Navbar = () => {
   const classes=useStyles();
 
   useEffect(() => {
-    if(window.innerWidth <= 900){
+    if(window.innerWidth <= 1000){
       setDrawerActivate(true);
     }
 
     window.addEventListener('resize', () => {
-      if(window.innerWidth <= 900) {
+      if(window.innerWidth <= 1000) {
         setDrawerActivate(true);
       } else {
         setDrawerActivate(false);
