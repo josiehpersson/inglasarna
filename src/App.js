@@ -1,6 +1,8 @@
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox'
+import PhotoGrid from './components/PhotoGrid';
+
 
 import {
   makeStyles,
@@ -23,7 +25,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: ['Spinnaker'],
     h1: {
       fontSize: '2rem',
@@ -43,9 +45,10 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: theme.spacing(9),
+    paddingTop: theme.spacing(15),
     padding: 0,
     margin: 0,
+    overflowX: 'hidden',
   },
 }));
 
@@ -56,6 +59,7 @@ function App() {
     <div className={classes.root}>
       <Navbar />
       <ContactBox />
+      <PhotoGrid />
       <Footer/>
     </div>
     </ThemeProvider>
