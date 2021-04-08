@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {useSpring, animated, useTransition, config} from 'react-spring';
 import {makeStyles, GridList, GridListTile} from '@material-ui/core';
 import Slogan from './Slogan';
+import Slide from './Slide';
+import {images as items} from '../assets/assets';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -10,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-around',
         width: '100vw',
         padding: 0,
-        position: 'relative'
+        position: 'relative',
     },
     gridList: {
         display: 'flex',
@@ -18,11 +19,13 @@ const useStyles = makeStyles((theme) => ({
         alignSelf: 'center',
         //lägger listan i sitt eget lager i chrome, kostar minne men hjälper med FPS
         transform: 'translateZ(0)',
-        height: 450,
-        position: 'relative'
+        height: '100vh',
+        position: 'relative',
+        overflow: 'hidden'
     },
     tile: {
-        height: '100vh'
+        width: '100vw',
+        overflow: 'clip'
     },
     slogan: {
         zIndex: 2,
@@ -59,26 +62,23 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+
+
 export default function ThreePhotoGrid() {
     const classes = useStyles();
 
- return(
- <div className={classes.root}>
+    
+    return(
+        <div className={classes.root}>
      <Slogan  
      rootClass={classes.slogan}
      glasClass={classes.sloganGlas}
      logoClass={classes.sloganLogo}
      textClass={classes.sloganText}
      />
-     <GridList className={classes.gridList} cols={3} rows={10}>
-         <GridListTile className={classes.tile} rows={10} cols={1}>
-             <img src="https://images.unsplash.com/photo-1587502536263-5dda37cd33f0?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="nature" />
-         </GridListTile>
-         <GridListTile className={classes.tile} rows={10} cols={1}>
-         <img src="https://images.unsplash.com/photo-1587502536263-5dda37cd33f0?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="nature" />
-         </GridListTile>
-         <GridListTile className={classes.tile} rows={10} cols={1}>
-         <img src="https://images.unsplash.com/photo-1587502536263-5dda37cd33f0?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="nature" />
+     <GridList className={classes.gridList} cols={12} rows={10}>
+         <GridListTile className={classes.tile} cols={12} rows={10}>
+        <Slide className={classes.tile} items={items} />
          </GridListTile>
      </GridList>
     </div>

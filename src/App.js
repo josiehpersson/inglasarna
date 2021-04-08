@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
+import ThreePhotoGrid from './components/ThreePhotoGrid';
 
 import {
   makeStyles,
@@ -42,9 +43,10 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: theme.spacing(9),
+    paddingTop: theme.spacing(15),
     padding: 0,
     margin: 0,
+    overflowX: 'hidden',
   },
 }));
 
@@ -54,7 +56,7 @@ function App() {
     <ThemeProvider theme={theme}>
     <div className={classes.root}>
       <Navbar />
-      
+      <ThreePhotoGrid />
       <Footer/>
     </div>
     </ThemeProvider>
