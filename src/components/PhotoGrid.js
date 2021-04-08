@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     tile: {
         width: '100vw',
-        overflow: 'clip'
+        overflow: 'hidden'
     },
     slogan: {
         zIndex: 2,
@@ -33,7 +33,17 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: theme.spacing(20),
+        [theme.breakpoints.between('xs','sm')] : {
+            marginTop: theme.spacing(5)
+        },
+        [theme.breakpoints.between('sm', 'md')] : {
+            marginTop: theme.spacing(12)
+        },
+        [theme.breakpoints.between('md','xl')] : {
+            marginTop: theme.spacing(15)
+        },
     },
     sloganGlas: {
         display: 'flex',
@@ -44,17 +54,14 @@ const useStyles = makeStyles((theme) => ({
         background: 'rgba(255, 255, 255, 0.7)',
         borderRadius: 3,
         boxShadow: '0px 4.17391px 4.17391px rgba(0, 0, 0, 0.25)',
-        padding: '2em',
-        [theme.breakpoints.down("sm")]: {
-            height: '40vh',
-        }
-    },
-    sloganText:{
-        color: '#003595',
-        fontFamily: 'Spinnaker',
-        fontSize: 18,
-        [theme.breakpoints.down("sm")]: {
-            fontSize: 12
+        padding: theme.spacing(4),
+        width: '60vw',
+        height: '60vh',
+        [theme.breakpoints.between('xs','sm')] : {
+            height: '10vh'
+        },
+        [theme.breakpoints.between('sm', 'md')] : {
+            height: '30vh'
         }
     },
     sloganLogo: {
@@ -64,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function ThreePhotoGrid() {
+export default function PhotoGrid() {
     const classes = useStyles();
 
     
