@@ -1,54 +1,49 @@
 import React, {useEffect, useState} from 'react';
-import {AppBar, Toolbar, List, ListItem, Typography, makeStyles, Grid, Drawer, IconButton, Button} from '@material-ui/core';
+import {AppBar, Menu, Toolbar, List, Fade, ListItem, Typography, makeStyles, Grid, Drawer, IconButton, Button, MenuItem} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import {FiX} from 'react-icons/fi';
+import {AiFillCaretDown} from 'react-icons/ai';
 import ResponsiveLogo from '../img/responsiveLogotype.png';
 import Logo from '../img/logotype.png';
 
-const useStyles = makeStyles({
-  '*' : {
-    fontFamily: 'Spinnaker'
-  },
+const useStyles = makeStyles((theme) => ({
   navbar: {
-    backgroundColor: 'white',
-    color: '#003595',
+    backgroundColor: theme.primary,
+    color: theme.secondary,
   },
   list: {
     width: 250,
-    backgroundColor: 'white',
-    color: '#003595',
-    paddingLeft: 10
+    backgroundColor: theme.primary,
+    color: theme.secondary,
+    paddingLeft: theme.spacing(1)
   },
   navlinks: {
-    paddingRight: 30,
-    paddingLeft: 30,
+    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(3),
     cursor: 'pointer',
-    fontSize: 18,
-    fontFamily: 'Spinnaker'
-    
   },
   sideBarIcon: {
     padding: 0,
-    color: '#003595',
+    color: theme.secondary,
     cursor: 'pointer',
   },
-  nestedList: {
-    fontSize: 12,
-  },
   drawerBtn: {
-    backgroundColor: '#003595',
-    color: 'white',
+    backgroundColor: theme.secondary,
+    color: theme.primary,
     marginLeft: '20%',
-    marginBottom: 10,
-    marginTop: 10,
-    fontFamily: 'Spinnaker'
+    marginBottom: theme.spacing(1),
+    marginTop: theme.spacing(1),
   },
   navbarBtn: {
     backgroundColor: '#003595',
     color: 'white',
-    marginRight: 30,
-    marginLeft: 100,
-    fontFamily: 'Spinnaker'
+    marginRight: 5,
+    marginLeft: 'auto',
+    fontFamily: 'Spinnaker',
+    fontSize: 18,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: 12,
+    }
   },
   responsiveLogo: {
     height: '5vh',
@@ -64,12 +59,17 @@ const useStyles = makeStyles({
     alignItems: 'center',
     marginRight: 10,
     marginLeft: 'auto'
-  }
-});
+  },
+  caret: {
+    paddingLeft: 10
+  },
+}));
 
 const Navbar = () => {
   const [drawerActivate, setDrawerActivate] = useState(false);
   const [drawer, setDrawer] = useState(false);
+  const [productsAnchor, setProductsAnchor] = useState(null);
+  const [pricesAnchor, setPricesAnchor] = useState(null)
   const classes=useStyles();
 
   useEffect(() => {
@@ -85,6 +85,20 @@ const Navbar = () => {
       }
     });
   },[]);
+
+  const handleProductsClick = (e,) => {
+    setProductsAnchor(e.currentTarget);
+  }
+  const handlePricesClick = (e,) => {
+    setPricesAnchor(e.currentTarget);
+  }
+  const handleProductsClose = () => {
+    setProductsAnchor(null);
+  }
+
+  const handlePricesClose = () => {
+    setPricesAnchor(null);
+  }
 
   const createDrawer = () => {
     return(
@@ -114,15 +128,25 @@ const Navbar = () => {
           >
             <IconButton><FiX /></IconButton>
             <List className={classes.list}>
-              <ListItem key={1} button divider> Varför inglasning? </ListItem>
+              <ListItem key={1} button divider> 
+              <Typography variant="subtitle1" color="textPrimary">
+                Varför inglasning? 
+                </Typography>
+                </ListItem>
               <ListItem key={2} button divider>
                 <List>
-              <ListItem key={2.0} button>Produkter</ListItem>
+              <ListItem key={2.0} button>
+                <Typography variant="subtitle1" color="textPrimary">
+                Produkter
+                </Typography>
+                </ListItem>
+                <Typography variant="body" color="textPrimary">
                 <ListItem key={2.1} className={classes.nestedList} button>Balkong</ListItem>
                 <ListItem key={2.2} className={classes.nestedList} button>Terass</ListItem>
                 <ListItem key={2.3} className={classes.nestedList} button>Skjutdörrar</ListItem>
                 <ListItem key={2.4} className={classes.nestedList} button>Tillbehör</ListItem>
                 <ListItem key={2.5} className={classes.nestedList} button>Garanti</ListItem>
+                </Typography>
                 </List>
               </ListItem>
                 <ListItem key={3} button divider>Hur går det till?</ListItem>
@@ -138,7 +162,7 @@ const Navbar = () => {
                   <ListItem key={5} button divider>Galleri</ListItem>
                   <ListItem key={6} button divider>Kontakt</ListItem>
             </List>
-            <Button className={classes.drawerBtn} variant="contained">Få gratis offert</Button>
+            <Button color="secondary" className={classes.drawerBtn} variant="contained">Få gratis offert</Button>
           </div>
         </Drawer>
       </div>
@@ -152,9 +176,53 @@ const Navbar = () => {
           <img src={Logo} className={classes.logo} alt="inglasarnas logotyp" />
           <div className={classes.linkContainer}>
           <Typography className={classes.navlinks}>Varför inglasning?</Typography>
-          <Typography className={classes.navlinks}>Produkter</Typography>
+          <Typography
+          className={classes.navlinks}
+          aria-controls="menu1" 
+          aria-haspopup="true"
+          onClick={handleProductsClick}
+          >
+            Produkter
+            <AiFillCaretDown className={classes.caret} />
+            </Typography>
+            <Menu
+            id="menu1"
+            anchorEl={productsAnchor}
+            keepMounted
+            open={Boolean(productsAnchor)}
+            onClose={handleProductsClose}
+            TransitionComponent={Fade}
+            className={classes.miniMenu}
+            >
+              <MenuItem onClick={handleProductsClose}>Balkong</MenuItem>
+              <MenuItem onClick={handleProductsClose}>Terass</MenuItem>
+              <MenuItem onClick={handleProductsClose}>Skjutdörrar</MenuItem>
+              <MenuItem onClick={handleProductsClose}>Tillbehör</MenuItem>
+              <MenuItem onClick={handleProductsClose}>Garanti</MenuItem>
+            </Menu>
           <Typography className={classes.navlinks}>Hur går det till?</Typography>
-          <Typography className={classes.navlinks}>Kostnad</Typography>
+          <Typography
+          className={classes.navlinks}
+          aria-controls="menu2" 
+          aria-haspopup="true"
+          onClick={handlePricesClick}
+          >
+            Kostnad
+            <AiFillCaretDown className={classes.caret} />
+            </Typography>
+            <Menu
+            id="menu2"
+            anchorEl={pricesAnchor}
+            keepMounted
+            open={Boolean(pricesAnchor)}
+            onClose={handlePricesClose}
+            TransitionComponent={Fade}
+            >
+              <MenuItem onClick={handlePricesClose}>Privatperson</MenuItem>
+              <MenuItem onClick={handlePricesClose}>BRF</MenuItem>
+              <MenuItem onClick={handlePricesClose}>Företag</MenuItem>
+              <MenuItem onClick={handlePricesClose}>Finansiering</MenuItem>
+            </Menu>
           <Typography className={classes.navlinks}>Galleri</Typography>
           <Typography className={classes.navlinks}>Kontakt</Typography>
           <Button color="primary" variant="contained" className={classes.navbarBtn}>Få gratis offert</Button>
