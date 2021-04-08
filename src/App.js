@@ -23,7 +23,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: ['Spinnaker'],
     h1: {
       fontSize: '2rem',

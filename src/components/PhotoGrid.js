@@ -58,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
         width: '60vw',
         height: '60vh',
         [theme.breakpoints.between('xs','sm')] : {
-            height: '10vh'
+            height: '10vh',
+            width: '50vw'
         },
         [theme.breakpoints.between('sm', 'md')] : {
             height: '30vh'
