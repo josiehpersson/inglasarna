@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
+import ContactBox from './components/ContactBoxes/ContactBox'
 
 import {
   makeStyles,
@@ -54,7 +55,7 @@ function App() {
     <ThemeProvider theme={theme}>
     <div className={classes.root}>
       <Navbar />
-      
+      <ContactBox />
       <Footer/>
     </div>
     </ThemeProvider>
