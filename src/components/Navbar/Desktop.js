@@ -1,20 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import {AppBar, Menu, Toolbar, List, Fade, ListItem, Typography, makeStyles, Grid, Drawer, IconButton, Button, MenuItem} from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import {FiX} from 'react-icons/fi';
+import React, {useState} from 'react';
+import {AppBar, Menu, Toolbar, Fade, Typography, makeStyles, Button, MenuItem} from '@material-ui/core';
 import {AiFillCaretDown} from 'react-icons/ai';
-import ResponsiveLogo from '../../img/responsiveLogotype.png';
 import Logo from '../../img/logotype.png';
-import Mobile from './Mobile';
-import { TheatersOutlined } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
-  list: {
-    width: 250,
-    backgroundColor: theme.primary,
-    color: theme.secondary,
-    paddingLeft: theme.spacing(1)
-  },
+
   navlinks: {
     paddingRight: theme.spacing(5),
     paddingLeft: theme.spacing(3),
