@@ -6,51 +6,33 @@ import {AiFillCaretDown} from 'react-icons/ai';
 import ResponsiveLogo from '../img/responsiveLogotype.png';
 import Logo from '../img/logotype.png';
 
-
 const useStyles = makeStyles((theme) => ({
-  '*' : {
-    fontFamily: 'Spinnaker'
-  },
   navbar: {
-    backgroundColor: 'white',
-    color: '#003595',
+    backgroundColor: theme.primary,
+    color: theme.secondary,
   },
   list: {
     width: 250,
-    backgroundColor: 'white',
-    color: '#003595',
-    paddingLeft: 10
+    backgroundColor: theme.primary,
+    color: theme.secondary,
+    paddingLeft: theme.spacing(1)
   },
   navlinks: {
-    paddingRight: 30,
-    paddingLeft: 30,
+    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(3),
     cursor: 'pointer',
-    fontSize: 18,
-    fontFamily: 'Spinnaker',
-    display: 'flex',
-    flexFlow: 'row nowrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-    [theme.breakpoints.down("lg")]: {
-      fontSize: 12
-    }
-    
   },
   sideBarIcon: {
     padding: 0,
-    color: '#003595',
+    color: theme.secondary,
     cursor: 'pointer',
   },
-  nestedList: {
-    fontSize: 12,
-  },
   drawerBtn: {
-    backgroundColor: '#003595',
-    color: 'white',
+    backgroundColor: theme.secondary,
+    color: theme.primary,
     marginLeft: '20%',
-    marginBottom: 10,
-    marginTop: 10,
-    fontFamily: 'Spinnaker'
+    marginBottom: theme.spacing(1),
+    marginTop: theme.spacing(1),
   },
   navbarBtn: {
     backgroundColor: '#003595',
@@ -146,15 +128,25 @@ const Navbar = () => {
           >
             <IconButton><FiX /></IconButton>
             <List className={classes.list}>
-              <ListItem key={1} button divider> Varför inglasning? </ListItem>
+              <ListItem key={1} button divider> 
+              <Typography variant="subtitle1" color="textPrimary">
+                Varför inglasning? 
+                </Typography>
+                </ListItem>
               <ListItem key={2} button divider>
                 <List>
-              <ListItem key={2.0} button>Produkter</ListItem>
+              <ListItem key={2.0} button>
+                <Typography variant="subtitle1" color="textPrimary">
+                Produkter
+                </Typography>
+                </ListItem>
+                <Typography variant="body" color="textPrimary">
                 <ListItem key={2.1} className={classes.nestedList} button>Balkong</ListItem>
                 <ListItem key={2.2} className={classes.nestedList} button>Terass</ListItem>
                 <ListItem key={2.3} className={classes.nestedList} button>Skjutdörrar</ListItem>
                 <ListItem key={2.4} className={classes.nestedList} button>Tillbehör</ListItem>
                 <ListItem key={2.5} className={classes.nestedList} button>Garanti</ListItem>
+                </Typography>
                 </List>
               </ListItem>
                 <ListItem key={3} button divider>Hur går det till?</ListItem>
@@ -170,7 +162,7 @@ const Navbar = () => {
                   <ListItem key={5} button divider>Galleri</ListItem>
                   <ListItem key={6} button divider>Kontakt</ListItem>
             </List>
-            <Button className={classes.drawerBtn} variant="contained">Få gratis offert</Button>
+            <Button color="secondary" className={classes.drawerBtn} variant="contained">Få gratis offert</Button>
           </div>
         </Drawer>
       </div>
