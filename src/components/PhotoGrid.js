@@ -41,9 +41,12 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.between('sm', 'md')] : {
             marginTop: theme.spacing(12)
         },
-        [theme.breakpoints.between('md','xl')] : {
-            marginTop: theme.spacing(15)
+        [theme.breakpoints.between('md','lg')] : {
+            marginTop: theme.spacing(16)
         },
+        [theme.breakpoints.between('lg', 'xl')] : {
+            marginTop: theme.spacing(20)
+        }
     },
     sloganGlas: {
         display: 'flex',
@@ -63,6 +66,12 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.between('sm', 'md')] : {
             height: '30vh'
+        },
+        [theme.breakpoints.between('md', 'lg')] : {
+            height: '40vh' 
+        },
+        [theme.breakpoints.between('lg', 'xl')] : {
+            width: '50vw'
         }
     },
     sloganLogo: {

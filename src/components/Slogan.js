@@ -5,7 +5,7 @@ import Logo from '../img/logotype.png';
 const Slogan = (props) => {
     return(
         <div className={props.rootClass}>
-        <Box container className={props.glasClass}>
+        <Box sm={6} md={8} lg={10} className={props.glasClass}>
             <img src={Logo} alt="inglasarnas logotyp" className={props.logoClass}/>
             <Typography variant="body" color="secondary">Vi kan inglasning</Typography>
         </Box>

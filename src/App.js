@@ -8,9 +8,10 @@ import {
   makeStyles,
   ThemeProvider,
   createMuiTheme,
+  responsiveFontSizes
 } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       main: '#FFFFFF',
@@ -36,12 +37,17 @@ const theme = createMuiTheme({
     subtitle1: {
       fontSize: '1.1rem',
     },
-    body: {
+    body1: {
       fontSize: '1rem',
     },
+    body2: {
+      fontSize: '0.8rem'
+    }
   },
   spacing: 8,
 });
+
+theme = responsiveFontSizes(theme, ['xs','sm', 'md', 'lg', 'xl']);
 
 const useStyles = makeStyles((theme) => ({
   root: {
