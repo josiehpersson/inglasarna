@@ -7,7 +7,7 @@ const Slogan = (props) => {
         <div className={props.rootClass}>
         <Box sm={6} md={8} lg={10} className={props.glasClass}>
             <img src={Logo} alt="inglasarnas logotyp" className={props.logoClass}/>
-            <Typography variant="body" color="secondary">Vi kan inglasning</Typography>
+            <Typography variant="h1" color="secondary">Vi kan inglasning</Typography>
         </Box>
         </div>
     )
