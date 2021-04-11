@@ -11,7 +11,7 @@ import {
   responsiveFontSizes
 } from '@material-ui/core/styles';
 
-const defaultTheme = createMuiTheme({
+const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#FFFFFF',
@@ -30,12 +30,18 @@ const defaultTheme = createMuiTheme({
     fontFamily: ['Spinnaker'],
     h1: {
       fontSize: '2rem',
-    },
-    h2: {
-      fontSize: '1.5rem',
+      '@media(min-width:0px) and (max-width:600px)' : {
+        fontSize: '1rem'
+      },
+      '@media(min-width:600px) and (max-width:900px)' : {
+        fontSize: '1.5rem'
+      },
     },
     subtitle1: {
       fontSize: '1.1rem',
+      '@media(min-width:0px) and (max-width:600px)' : {
+        fontSize: '1rem'
+      },
     },
     body1: {
       fontSize: '1rem',
@@ -54,20 +60,6 @@ const defaultTheme = createMuiTheme({
   }
 
 });
-const {breakpoints, typography: {pxToRem}} = defaultTheme;
-
-let theme = {
-  ...defaultTheme,
-  overrides: {
-    MuiTypography: {
-      h1: {
-        fontSize: "3rem"
-      },
-      }
-    }
-  }
-
-theme = responsiveFontSizes(theme, ['xs','sm', 'md', 'lg', 'xl'], 1, ['h1', 'h2', 'subtitle1', 'body1', 'body2']);
 
 const useStyles = makeStyles((theme) => ({
   root: {
