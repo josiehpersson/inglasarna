@@ -36,16 +36,16 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         marginTop: theme.spacing(20),
         [theme.breakpoints.between('xs','sm')] : {
-            marginTop: theme.spacing(5)
+            marginTop: theme.spacing(10)
         },
         [theme.breakpoints.between('sm', 'md')] : {
-            marginTop: theme.spacing(12)
-        },
-        [theme.breakpoints.between('md','lg')] : {
             marginTop: theme.spacing(16)
         },
-        [theme.breakpoints.between('lg', 'xl')] : {
+        [theme.breakpoints.between('md','lg')] : {
             marginTop: theme.spacing(20)
+        },
+        [theme.breakpoints.between('lg', 'xl')] : {
+            marginTop: theme.spacing(22)
         }
     },
     sloganGlas: {
