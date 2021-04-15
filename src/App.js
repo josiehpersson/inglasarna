@@ -2,6 +2,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox'
 import PhotoGrid from './components/PhotoGrid';
+import HowToStepper from './components/HowToStepper'
 
 
 import {
@@ -57,7 +58,24 @@ const theme = createMuiTheme({
     md: 960,
     lg: 1280,
     xl: 1920,
-  }
+  },
+
+  overrides: {
+    MuiStepIcon: {
+     root: {
+       '&$completed': {
+         color: 'rgba(00,35,95, 0.5)',
+       },
+       '&$active': {
+         color: '#003595',
+       },
+      },
+      text: {
+          color: '#fff'
+      },
+     active: {},
+     completed: {},
+   }}
 
 });
 
@@ -77,6 +95,7 @@ function App() {
     <div className={classes.root}>
       <Navbar />
       <ContactBox />
+      <HowToStepper />
       <PhotoGrid />
       <Footer/>
     </div>
