@@ -3,12 +3,12 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox';
 import PhotoGrid from './components/PhotoGrid';
+import ContactForm from './components/ContactForm';
 
 import {
   makeStyles,
   ThemeProvider,
   createMuiTheme,
-  responsiveFontSizes
 } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
@@ -78,6 +78,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Navbar />
+        <ContactForm />
         <ContactBox />
         <InfoBox />
         <PhotoGrid />
