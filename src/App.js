@@ -1,3 +1,4 @@
+import InfoBox from "./components/InfoBoxes/InfoBox";
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox';
@@ -7,26 +8,26 @@ import {
   makeStyles,
   ThemeProvider,
   createMuiTheme,
-  responsiveFontSizes,
+  responsiveFontSizes
 } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#FFFFFF',
-      contrastText: '#003595',
+      main: "#FFFFFF",
+      contrastText: "#003595",
     },
     secondary: {
-      main: '#003595',
-      contrastText: '#FFFFFF',
+      main: "#003595",
+      contrastText: "#FFFFFF",
     },
     textPrimary: {
-      main: '#1C1C1C',
+      main: "#1C1C1C",
     },
   },
   typography: {
     fontSize: 12,
-    fontFamily: ['Spinnaker'],
+    fontFamily: ["Spinnaker"],
     h1: {
       fontSize: '2rem',
       '@media(min-width:0px) and (max-width:600px)': {
@@ -46,7 +47,7 @@ const theme = createMuiTheme({
       },
     },
     body1: {
-      fontSize: '1rem',
+      fontSize: "1rem",
     },
     body2: {
       fontSize: '0.8rem',
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(15),
     padding: 0,
     margin: 0,
-    overflowX: 'hidden',
+    overflowX: "hidden",
   },
 }));
 
@@ -78,6 +79,7 @@ function App() {
       <div className={classes.root}>
         <Navbar />
         <ContactBox />
+        <InfoBox />
         <PhotoGrid />
         <Footer />
       </div>
