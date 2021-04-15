@@ -1,17 +1,15 @@
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer";
-import ContactBox from "./components/ContactBoxes/ContactBox";
-import PhotoGrid from "./components/PhotoGrid";
 import InfoBox from "./components/InfoBoxes/InfoBox";
-
-
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer';
+import ContactBox from './components/ContactBoxes/ContactBox';
+import PhotoGrid from './components/PhotoGrid';
 
 import {
   makeStyles,
   ThemeProvider,
   createMuiTheme,
-  responsiveFontSizes,
-} from "@material-ui/core/styles";
+  responsiveFontSizes
+} from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   palette: {
@@ -31,25 +29,28 @@ const theme = createMuiTheme({
     fontSize: 12,
     fontFamily: ["Spinnaker"],
     h1: {
-      fontSize: "2rem",
-      "@media(min-width:0px) and (max-width:600px)": {
-        fontSize: "1rem",
+      fontSize: '2rem',
+      '@media(min-width:0px) and (max-width:600px)': {
+        fontSize: '0.8rem',
       },
-      "@media(min-width:600px) and (max-width:900px)": {
-        fontSize: "1.5rem",
+      '@media(min-width:600px) and (max-width:900px)': {
+        fontSize: '1.5rem',
       },
     },
     subtitle1: {
-      fontSize: "1.1rem",
-      "@media(min-width:0px) and (max-width:600px)": {
-        fontSize: "1rem",
+      fontSize: '1rem',
+      '@media(min-width:0px) and (max-width:600px)': {
+        fontSize: '1rem',
+      },
+      '@media(min-width:600px) and (max-width:1100px)': {
+        fontSize: '0.7rem',
       },
     },
     body1: {
       fontSize: "1rem",
     },
     body2: {
-      fontSize: "0.8rem",
+      fontSize: '0.8rem',
     },
   },
   spacing: 8,
