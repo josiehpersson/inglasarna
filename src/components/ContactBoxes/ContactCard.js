@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     minWidth: "96px",
     minHeight: "102px"
-    
   },
   rubrik: {
     fontSize: "18px",
