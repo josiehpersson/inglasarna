@@ -3,7 +3,9 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox';
 import PhotoGrid from './components/PhotoGrid';
+import HowToStepper from './components/HowToStepper'
 import ContactForm from './components/ContactForm';
+
 
 import {
   makeStyles,
@@ -61,6 +63,48 @@ const theme = createMuiTheme({
     lg: 1280,
     xl: 1920,
   },
+
+
+  overrides: {
+    MuiStepIcon: {
+     root: {
+       width: '38px',
+       height: '37px',
+       '&$completed': {
+         color: 'rgba(00,35,95, 0.5)',
+       },
+       '&$active': {
+         color: '#003595',
+       },
+       color: '#c4c4c4'
+      },
+      text: {
+       color: '#fff',
+       fill: '#fff'
+      }
+    },
+    MuiStepConnector: {
+      vertical: {
+        marginLeft: '19px'
+      }
+    },
+    MuiStepContent: {
+      root: {
+        marginLeft: '19px',
+        paddingLeft: '40px',
+        color: '#000'
+      }
+    },
+    MuiStepLabel: {
+      iconContainer: {
+        paddingRight: '16px'
+      },
+      label: {
+        color: '#c4c4c4'
+      }
+    },
+ }
+
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -76,14 +120,17 @@ function App() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
+
       <div className={classes.root}>
         <Navbar />
         <ContactForm />
         <ContactBox />
+        <HowToStepper />
         <InfoBox />
         <PhotoGrid />
         <Footer />
       </div>
+
     </ThemeProvider>
   );
 }
