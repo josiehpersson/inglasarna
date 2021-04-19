@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox';
 import PhotoGrid from './components/PhotoGrid';
 import ContactForm from './components/ContactForm';
+import TreColInfoBox from './components/TreColInfoBox/TreColInfoBox';
 
 import {
   makeStyles,
@@ -78,6 +79,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Navbar />
+        <TreColInfoBox />
         <ContactForm />
         <ContactBox />
         <InfoBox />
