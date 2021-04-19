@@ -63,20 +63,42 @@ const theme = createMuiTheme({
   overrides: {
     MuiStepIcon: {
      root: {
+       width: '38px',
+       height: '37px',
        '&$completed': {
          color: 'rgba(00,35,95, 0.5)',
        },
        '&$active': {
          color: '#003595',
        },
+       color: '#c4c4c4'
       },
       text: {
-          color: '#fff'
+       color: '#fff',
+       fill: '#fff'
+      }
+    },
+    MuiStepConnector: {
+      vertical: {
+        marginLeft: '19px'
+      }
+    },
+    MuiStepContent: {
+      root: {
+        marginLeft: '19px',
+        paddingLeft: '40px',
+        color: '#000'
+      }
+    },
+    MuiStepLabel: {
+      iconContainer: {
+        paddingRight: '16px'
       },
-     active: {},
-     completed: {},
-   }}
-
+      label: {
+        color: '#c4c4c4'
+      }
+    },
+ }
 });
 
 const useStyles = makeStyles((theme) => ({

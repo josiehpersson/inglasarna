@@ -1,28 +1,38 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepContent from '@material-ui/core/StepContent';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Stepper from "@material-ui/core/Stepper";
+import Step from "@material-ui/core/Step";
+import StepLabel from "@material-ui/core/StepLabel";
+import StepContent from "@material-ui/core/StepContent";
+import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    margin: "auto",
+    width: "50%",
+    "@media(min-width:0px) and (max-width:900px)": {
+      width: "100%",
+    },
   },
   buttonNext: {
     background: "#296BE7",
     fontSize: "18px",
     color: "#fff",
-    marginTop: theme.spacing(1),
-    marginRight: theme.spacing(1),
+    marginTop: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    borderRadius: "5px",
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    transform: "translateX(-10px)",
+    textTransform: "none",
   },
   button: {
     fontSize: "18px",
-    marginTop: theme.spacing(1),
-    marginRight: theme.spacing(1),
+    marginTop: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    transform: "translateX(-10px)",
+    textTransform: "none",
   },
   actionsContainer: {
     marginBottom: theme.spacing(2),
@@ -34,8 +44,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "18px",
   },
   completed: {
-    background: 'green'
-  }
+    background: "green",
+  },
 }));
 
 function getSteps() {
@@ -108,7 +118,7 @@ function HowToStepper() {
         <Paper square elevation={0} className={classes.resetContainer}>
           <Typography>Så lätt var det!</Typography>
           <Button onClick={handleReset} className={classes.button}>
-            tillbaka
+            Tillbaka
           </Button>
         </Paper>
       )}
