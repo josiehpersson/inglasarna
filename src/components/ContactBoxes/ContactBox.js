@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, Grid } from "@material-ui/core";
 import ContactCard from "./ContactCard";
+
 import bild1 from '../../img/contactbild1.png'
 import bild2 from '../../img/contactbild2.png'
 import bild3 from '../../img/contactbild3.png'
