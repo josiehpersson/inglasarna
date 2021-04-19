@@ -5,7 +5,9 @@ import ContactBox from './components/ContactBoxes/ContactBox';
 import PhotoGrid from './components/PhotoGrid';
 import HowToStepper from './components/HowToStepper'
 import ContactForm from './components/ContactForm';
+import GridGallery from './components/GridGallery';
 
+import { gridGalleryImages } from './assets/assets'
 
 import {
   makeStyles,
@@ -124,6 +126,7 @@ function App() {
       <div className={classes.root}>
         <Navbar />
         <ContactForm />
+        <GridGallery rubrik="Våra balkonginglasningar" images={gridGalleryImages} />
         <ContactBox />
         <HowToStepper />
         <InfoBox />
