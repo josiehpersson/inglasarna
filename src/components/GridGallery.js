@@ -1,48 +1,75 @@
-import React, { useState, useCallback } from "react";
-import Gallery from "react-photo-gallery";
-import Carousel, { Modal, ModalGateway } from "react-images";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Carousel from "react-material-ui-carousel";
+import { Modal, Container, Typography } from "@material-ui/core/";
 
 
 const useStyles = makeStyles((theme) => ({
-
- 
-  
+  container: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
+  },
+  modal: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backdropFilter: "blur(3px)",
+  },
+  carousel: {},
+  img: {
+    maxHeight: "90vh",
+    maxWidth: "100%",
+  },
+  rubrik: {
+    fontSize: "24px",
+    textAlign: "center",
+  },
 }));
 
 function GridGallery({ rubrik, images }) {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
-  const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-  const openLightbox = useCallback((event, { photo, index }) => {
-    setCurrentImage(index);
-    setViewerIsOpen(true);
-  }, []);
-
-  const closeLightbox = () => {
-    setCurrentImage(0);
-    setViewerIsOpen(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
-    <div>
-      <Gallery photos={images} onClick={openLightbox} />
-      <ModalGateway>
-        {viewerIsOpen ? (
-          <Modal onClose={closeLightbox}>
-            <Carousel
-              currentIndex={currentImage}
-              views={images.map(x => ({
-                ...x,
-                srcset: x.srcSet,
-                caption: x.title
-              }))}
-            />
-          </Modal>
-        ) : null}
-      </ModalGateway>
-    </div>
+    <Container className={classes.container}>
+      <Typography className={classes.rubrik}>{rubrik}</Typography>
+      <button type="button" onClick={handleOpen}>
+        Open Modal
+      </button>
+
+
+
+
+
+      <Modal
+        disableAutoFocus={true}
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <Carousel
+          className={classes.carousel}
+          autoPlay={false}
+          navButtonsAlwaysVisible
+          animation={"fade"}
+          cycleNavigation={false}
+        >
+          {images.map((image) => (
+            <img className={classes.img} src={image.src} alt={image.src}></img>
+          ))}
+        </Carousel>
+      </Modal>
+    </Container>
   );
 }
 
