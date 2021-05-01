@@ -1,11 +1,10 @@
-import InfoBox from "./components/InfoBoxes/InfoBox";
+import InfoBox from './components/InfoBoxes/InfoBox';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox';
 import PhotoGrid from './components/PhotoGrid';
-import HowToStepper from './components/HowToStepper'
-import ContactForm from './components/ContactForm';
-import InfoColumn from './components/InfoColumn';
+import HowToStepper from './components/HowToStepper';
+import FinanceBox from './components/FinanceBox';
 import {
   makeStyles,
   ThemeProvider,
@@ -15,20 +14,20 @@ import {
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#FFFFFF",
-      contrastText: "#003595",
+      main: '#FFFFFF',
+      contrastText: '#003595',
     },
     secondary: {
-      main: "#003595",
-      contrastText: "#FFFFFF",
+      main: '#003595',
+      contrastText: '#FFFFFF',
     },
     textPrimary: {
-      main: "#1C1C1C",
+      main: '#1C1C1C',
     },
   },
   typography: {
     fontSize: 12,
-    fontFamily: ["Spinnaker"],
+    fontFamily: ['Spinnaker'],
     h1: {
       fontSize: '2rem',
       '@media(min-width:0px) and (max-width:600px)': {
@@ -48,7 +47,7 @@ const theme = createMuiTheme({
       },
     },
     body1: {
-      fontSize: "1rem",
+      fontSize: '1rem',
     },
     body2: {
       fontSize: '0.8rem',
@@ -63,47 +62,45 @@ const theme = createMuiTheme({
     xl: 1920,
   },
 
-
   overrides: {
     MuiStepIcon: {
-     root: {
-       width: '38px',
-       height: '37px',
-       '&$completed': {
-         color: 'rgba(00,35,95, 0.5)',
-       },
-       '&$active': {
-         color: '#003595',
-       },
-       color: '#c4c4c4'
+      root: {
+        width: '38px',
+        height: '37px',
+        '&$completed': {
+          color: 'rgba(00,35,95, 0.5)',
+        },
+        '&$active': {
+          color: '#003595',
+        },
+        color: '#c4c4c4',
       },
       text: {
-       color: '#fff',
-       fill: '#fff'
-      }
+        color: '#fff',
+        fill: '#fff',
+      },
     },
     MuiStepConnector: {
       vertical: {
-        marginLeft: '19px'
-      }
+        marginLeft: '19px',
+      },
     },
     MuiStepContent: {
       root: {
         marginLeft: '19px',
         paddingLeft: '40px',
-        color: '#000'
-      }
+        color: '#000',
+      },
     },
     MuiStepLabel: {
       iconContainer: {
-        paddingRight: '16px'
+        paddingRight: '16px',
       },
       label: {
-        color: '#c4c4c4'
-      }
+        color: '#c4c4c4',
+      },
     },
- }
-
+  },
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -111,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(15),
     padding: 0,
     margin: 0,
-    overflowX: "hidden",
+    overflowX: 'hidden',
   },
 }));
 
@@ -119,18 +116,15 @@ function App() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-
       <div className={classes.root}>
         <Navbar />
-        <InfoColumn />
-        <ContactForm />
+        <FinanceBox />
         <ContactBox />
         <HowToStepper />
         <InfoBox />
         <PhotoGrid />
         <Footer />
       </div>
-
     </ThemeProvider>
   );
 }
