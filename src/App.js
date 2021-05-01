@@ -3,6 +3,8 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox';
 import PhotoGrid from './components/PhotoGrid';
+import ContactForm from './components/ContactForm';
+import TreColInfoBox from './components/TreColInfoBox/TreColInfoBox';
 import HowToStepper from './components/HowToStepper';
 import FinanceBox from './components/FinanceBox';
 import {
@@ -118,6 +120,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Navbar />
+        <TreColInfoBox />
+        <ContactForm />
         <FinanceBox />
         <ContactBox />
         <HowToStepper />
