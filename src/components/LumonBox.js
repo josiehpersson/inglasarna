@@ -9,9 +9,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
   },
   logo: {
-    width: 200,
+    width: '70%',
   },
 }));
 const LumonBox = () => {

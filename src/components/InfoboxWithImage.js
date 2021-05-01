@@ -5,10 +5,11 @@ import BackgroundImage from '../img/lumon-balkonginglasning-25.jpg';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    height: 500,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
   },
   parallax: {
     display: 'flex',
@@ -20,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     background: 'rgba(255, 255, 255, 0.7)',
     borderRadius: 3,
     boxShadow: '0px 4.17391px 4.17391px rgba(0, 0, 0, 0.25)',
-    height: 300,
     padding: theme.spacing(3),
     textAlign: 'center',
     display: 'flex',
@@ -35,11 +35,11 @@ const InfoboxWithImage = () => {
   return (
       <Parallax bgImage={BackgroundImage} strength={-200}>
       <Grid container xs={12} className={classes.container}>
-        <Grid container spacing={1} xs={7} className={classes.glas}>
-          <Grid item xs={7}>
+        <Grid container spacing={1} xs={10} className={classes.glas}>
+          <Grid item xs={9}>
             <Typography variant="h1">RUBRIK</Typography>
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={9}>
             <Typography variant="body1">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac
               justo commodo, malesuada odio vitae, euismod ante. Mauris quis sem
