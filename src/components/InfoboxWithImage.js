@@ -5,12 +5,14 @@ import BackgroundImage from '../img/lumon-balkonginglasning-25.jpg';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    /* 
-    backgroundImage: `url(${BackgroundImage})`,
-    backgroundSize: '100%',
-    backgroundPosition: 'bottom center', */
     height: 500,
     display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  parallax: {
+    display: 'flex',
+    flexFlow: 'column',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -18,21 +20,22 @@ const useStyles = makeStyles((theme) => ({
     background: 'rgba(255, 255, 255, 0.7)',
     borderRadius: 3,
     boxShadow: '0px 4.17391px 4.17391px rgba(0, 0, 0, 0.25)',
-    height: 400,
+    height: 300,
     padding: theme.spacing(3),
     textAlign: 'center',
     display: 'flex',
     flexFlow: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    alignSelf: 'center'
   },
 }));
 const InfoboxWithImage = () => {
   const classes = useStyles();
   return (
-    <Grid container spacing={2} xs={10} className={classes.container}>
       <Parallax bgImage={BackgroundImage} strength={-200}>
-        <Grid container spacing={2} xs={7} className={classes.glas}>
+      <Grid container xs={12} className={classes.container}>
+        <Grid container spacing={1} xs={7} className={classes.glas}>
           <Grid item xs={7}>
             <Typography variant="h1">RUBRIK</Typography>
           </Grid>
@@ -48,8 +51,8 @@ const InfoboxWithImage = () => {
             </Typography>
           </Grid>
         </Grid>
-      </Parallax>
     </Grid>
+      </Parallax>
   );
 };
 
