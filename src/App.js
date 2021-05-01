@@ -8,6 +8,7 @@ import TreColInfoBox from './components/TreColInfoBox/TreColInfoBox';
 import HowToStepper from './components/HowToStepper';
 import FinanceBox from './components/FinanceBox';
 import InfoboxWithImage from './components/InfoboxWithImage';
+import LumonBox from './components/LumonBox';
 import {
   makeStyles,
   ThemeProvider,
@@ -121,6 +122,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Navbar />
+        <LumonBox />
         <InfoboxWithImage />
         <TreColInfoBox />
         <ContactForm />
