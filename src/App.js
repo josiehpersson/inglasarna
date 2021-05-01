@@ -9,6 +9,7 @@ import HowToStepper from './components/HowToStepper';
 import FinanceBox from './components/FinanceBox';
 import InfoboxWithImage from './components/InfoboxWithImage';
 import LumonBox from './components/LumonBox';
+import BoxFadedImg from './components/BoxFadedImg';
 import {
   makeStyles,
   ThemeProvider,
@@ -122,6 +123,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Navbar />
+        <BoxFadedImg />
         <LumonBox />
         <InfoboxWithImage />
         <TreColInfoBox />
