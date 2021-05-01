@@ -5,6 +5,7 @@ import ContactBox from './components/ContactBoxes/ContactBox';
 import PhotoGrid from './components/PhotoGrid';
 import HowToStepper from './components/HowToStepper';
 import FinanceBox from './components/FinanceBox';
+import InfoboxWithImage from './components/InfoboxWithImage';
 import {
   makeStyles,
   ThemeProvider,
@@ -118,6 +119,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Navbar />
+        <InfoboxWithImage />
         <FinanceBox />
         <ContactBox />
         <HowToStepper />
