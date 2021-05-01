@@ -2,31 +2,18 @@ import React from 'react';
 import { Button, Grid, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  line: {
-    backgroundColor: '#003595',
-    height: '1%',
-    width: '30%',
-    position: 'absolute',
-    left: '1%',
-
-    [theme.breakpoints.up('lg')]: {
-      width: '20%',
-      left: theme.spacing(1),
-    },
-    [theme.breakpoints.up('xl')]: {
-      width: '10%',
-      left: theme.spacing(1),
-    },
+  container: {
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
   },
 }));
 
 const FinanceBox = () => {
   const classes = useStyles();
   return (
-    <Grid container spacing={3} xs={10}>
+    <Grid container spacing={3} xs={10} className={classes.container}>
       <Grid item xs={10}>
         <Typography variant="h1">Vi hjälper dig med finansiering</Typography>
-        <span className={classes.line}></span>
       </Grid>
       <Grid item xs={10}>
         <Typography variant="body1">

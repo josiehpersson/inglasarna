@@ -2,7 +2,6 @@ import InfoBox from './components/InfoBoxes/InfoBox';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox';
-import PhotoGrid from './components/PhotoGrid';
 import ContactForm from './components/ContactForm';
 import TreColInfoBox from './components/TreColInfoBox/TreColInfoBox';
 import HowToStepper from './components/HowToStepper';
@@ -10,6 +9,7 @@ import FinanceBox from './components/FinanceBox';
 import InfoboxWithImage from './components/InfoboxWithImage';
 import LumonBox from './components/LumonBox';
 import BoxFadedImg from './components/BoxFadedImg';
+import LinkBox from './components/LinkBox';
 import {
   makeStyles,
   ThemeProvider,
@@ -123,6 +123,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Navbar />
+        <LinkBox />
         <BoxFadedImg />
         <LumonBox />
         <InfoboxWithImage />
@@ -132,7 +133,6 @@ function App() {
         <ContactBox />
         <HowToStepper />
         <InfoBox />
-        <PhotoGrid />
         <Footer />
       </div>
     </ThemeProvider>

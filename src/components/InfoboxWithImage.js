@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     flexFlow: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    backdropFilter: "blur(4px)",
   },
 }));
 const InfoboxWithImage = () => {
