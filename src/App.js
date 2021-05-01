@@ -3,6 +3,8 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import ContactBox from './components/ContactBoxes/ContactBox';
 import PhotoGrid from './components/PhotoGrid';
+import ContactForm from './components/ContactForm';
+import TreColInfoBox from './components/TreColInfoBox/TreColInfoBox';
 import HowToStepper from './components/HowToStepper';
 import FinanceBox from './components/FinanceBox';
 import InfoboxWithImage from './components/InfoboxWithImage';
@@ -120,6 +122,8 @@ function App() {
       <div className={classes.root}>
         <Navbar />
         <InfoboxWithImage />
+        <TreColInfoBox />
+        <ContactForm />
         <FinanceBox />
         <ContactBox />
         <HowToStepper />
