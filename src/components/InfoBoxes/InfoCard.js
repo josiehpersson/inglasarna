@@ -1,6 +1,6 @@
-import React from "react";
-import { Typography, Box, CardMedia } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import React from 'react';
+import { Typography, Box, CardMedia } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -9,24 +9,24 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
   },
   cardMedia: {
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   },
   overlay: {
-    height: "101px",
-    width: "347px",
+    height: 'inherit',
+    width: 'inherit',
     background:
-      "linear-gradient(270deg, rgba(255, 255, 255, 0.31) 0%, #FFFFFF 58.62%), url(.jpg)",
-    display: "flex",
-    alignItems: "center",
+      'linear-gradient(270deg, rgba(255, 255, 255, 0.31) 0%, #FFFFFF 58.62%), url(.jpg)',
+    display: 'flex',
+    alignItems: 'center',
   },
   iconWrapper: {
-    width: "48px",
-    height: "48px",
-    borderRadius: "50%",
+    width: '48px',
+    height: '48px',
+    borderRadius: '50%',
     margin: theme.spacing(2),
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));
 
@@ -38,7 +38,7 @@ function InfoCard({ img, text, rubrik, icon, color }) {
       <CardMedia className={classes.cardMedia} image={img}>
         <Box className={classes.overlay}>
           <Box bgcolor={color} className={classes.iconWrapper}>
-            <img src={icon}></img>
+            <img src={icon} alt="hammer-icon"></img>
           </Box>
           <Box className={classes.content}>
             <Typography clavariant="subtitle1">{rubrik}</Typography>

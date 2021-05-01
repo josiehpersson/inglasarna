@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles, GridList, GridListTile } from '@material-ui/core';
+import { makeStyles, Grid, GridList, GridListTile } from '@material-ui/core';
 import Slogan from './Slogan';
 import Slide from './Slide';
 import { images as items } from '../../assets/assets';

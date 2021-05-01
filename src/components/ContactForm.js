@@ -1,112 +1,75 @@
 import React, { useState } from 'react';
-import { Button, TextField, Typography, makeStyles } from '@material-ui/core';
+import { Grid, TextField, Button, makeStyles, Typography,Box } from '@material-ui/core';
+import Background from '../img/lumon-balkonginglasning-701.jpg';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: 'flex',
-    flexFlow: 'column',
-    textAlign: 'center',
+    backgroundImage: `url(${Background})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    padding: theme.spacing(2),
   },
   formContainer: {
-    height: 500,
-    background:
-      'url("https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-balkonginglasning-701.jpg?itok=l8oWvTok")',
-    backgroundSize: '100%',
-    backgroundPosition: 'center center',
-    backgroundRepeat: 'no-repeat',
-    boxShadow: '0px 4.17391px 4.17391px rgba(0, 0, 0, 0.25)',
-    [theme.breakpoints.between('xs', 'sm')]: {
-        backgroundSize: '250%',
-      },
-  },
-  form: {
-    display: 'flex',
-    flexFlow: 'column',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
     background: 'rgba(255, 255, 255, 0.7)',
-    width: '40%',
-    height: '100%',
-    [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-      },
-  },
-  formfields: {
-    display: 'flex',
-    flexFlow: 'column',
-    paddingLeft: theme.spacing(4),
-    paddingRight: theme.spacing(4),
+    backdropFilter: 'blur(4px)',
+    borderRadius: 6,
+    padding: theme.spacing(2)
   },
   spacing: {
-      marginBottom: theme.spacing(1),
-      marginTop: theme.spacing(1)
+    marginBottom: theme.spacing(2)
   }
 }));
+
 const ContactForm = () => {
-  const classes = useStyles();
   const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleClick = () => {
-    console.log(name, email, phone, message);
-  };
+  const classes = useStyles();
+
   return (
-    <div className={classes.container}>
-      <div className={classes.formContainer}>
-        <form className={classes.form} noValidate autoComplete="off">
-          <Typography variant="h1" className={classes.spacing}>Kontakta oss!</Typography>
+    <Grid container xs={12} className={classes.container}>
+      <Grid item xs={12} s={12} md={6} lg={6} className={classes.formContainer}>
+        <form>
+          <Typography variant="h1" className={classes.spacing}>Kontakta oss</Typography>
           <TextField
+            fullWidth
+            color="secondary"
+            variant="outlined"
             label="Namn"
-            type="text"
-            variant="outlined"
-            value={name}
-            color="secondary"
             className={classes.spacing}
-            onChange={(e) => setName(e.target.value)}
           />
           <TextField
+            fullWidth
+            color="secondary"
+            variant="outlined"
+            label="Nummer"
+            className={classes.spacing}
+          />
+          <TextField
+            fullWidth
+            color="secondary"
+            variant="outlined"
             label="E-mail"
-            type="text"
-            variant="outlined"
-            value={email}
-            color="secondary"
             className={classes.spacing}
-            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
-            label="Telefonnummer"
-            type="text"
-            variant="outlined"
-            value={phone}
-            color="secondary"
-            className={classes.spacing}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <TextField
-            label="Meddelande"
-            type="text"
-            variant="outlined"
+            fullWidth
             multiline
             rows={6}
-            value={message}
             color="secondary"
+            variant="outlined"
+            label="Skriv ditt meddelande här..."
             className={classes.spacing}
-            onChange={(e) => setMessage(e.target.value)}
           />
-          <Button
-            type="button"
-            variant="contained"
-            color="secondary"
-            onClick={handleClick}
-            className={classes.spacing}
-          >
-            Skicka
+          <Button variant="contained" color="secondary" onClick={() => console.log(name, number, email, message)}>
+            SKICKA
           </Button>
         </form>
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 export default ContactForm;

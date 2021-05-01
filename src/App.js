@@ -10,8 +10,8 @@ import InfoboxWithImage from './components/InfoboxWithImage';
 import LumonBox from './components/LumonBox';
 import BoxFadedImg from './components/BoxFadedImg';
 import LinkBox from './components/LinkBox';
+import Start from './views/Start';
 import {
-  makeStyles,
   ThemeProvider,
   createMuiTheme,
 } from '@material-ui/core/styles';
@@ -36,10 +36,10 @@ const theme = createMuiTheme({
     h1: {
       fontSize: '2rem',
       '@media(min-width:0px) and (max-width:600px)': {
-        fontSize: '0.8rem',
+        fontSize: '1.5rem',
       },
       '@media(min-width:600px) and (max-width:900px)': {
-        fontSize: '1.5rem',
+        fontSize: '1.8rem',
       },
     },
     subtitle1: {
@@ -108,33 +108,12 @@ const theme = createMuiTheme({
   },
 });
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    paddingTop: theme.spacing(15),
-    padding: 0,
-    margin: 0,
-    overflowX: 'hidden',
-  },
-}));
-
 function App() {
-  const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.root}>
         <Navbar />
-        <LinkBox />
-        <BoxFadedImg />
-        <LumonBox />
-        <InfoboxWithImage />
-        <TreColInfoBox />
-        <ContactForm />
-        <FinanceBox />
-        <ContactBox />
-        <HowToStepper />
-        <InfoBox />
+        <Start />
         <Footer />
-      </div>
     </ThemeProvider>
   );
 }
