@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Typography, Box} from '@material-ui/core'
+import {Typography, Box} from '@material-ui/core'
 import  { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     margin: 0,
-    padding: theme.spacing(4)
+    padding: theme.spacing(4),
+    width: '100vw'
   },
   heading: {
     marginBottom: "0.6rem"

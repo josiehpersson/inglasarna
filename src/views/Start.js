@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles, Grid } from '@material-ui/core';
-import SliderWithSlogan from '../components/SliderWithSlogan/SliderWithSlogan';
+import { makeStyles, Box } from '@material-ui/core';
+import TestSlide from '../components/SliderWithSlogan/TestSlide';
 import InfoBox from '../components/InfoBoxes/InfoBox';
 import TreColInfoBox from '../components/TreColInfoBox/TreColInfoBox';
 import ContactForm from '../components/ContactForm';
@@ -20,20 +20,22 @@ const useStyles = makeStyles((theme) => ({
 const Start = () => {
   const classes = useStyles();
   return (
-    <Grid xs={12} spacing={3} className={classes.container}>
-      <Grid item xs={12}>
-        <SliderWithSlogan/>
-      </Grid>
-      <Grid item xs={10}>
+    <Box sm={12} className={classes.container}>
+      <div className={classes.spacing}>
+          <TestSlide />
+      </div>
+        <Box sm={10}>
+          <div className={classes.spacing}>
         <InfoBox/>
-      </Grid>
-      <Grid item xs={10}>
+          </div>
+        <div className={classes.spacing}>
         <TreColInfoBox />
-      </Grid>
-      <Grid item xs={10}>
+        </div>
+        <div className={classes.spacing}>
         <ContactForm />
-      </Grid>
-    </Grid>
+        </div>
+        </Box>
+    </Box>
   );
 };
 export default Start;

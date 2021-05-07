@@ -43,12 +43,12 @@ const theme = createMuiTheme({
       },
     },
     subtitle1: {
-      fontSize: '1rem',
+      fontSize: '1.3rem',
       '@media(min-width:0px) and (max-width:600px)': {
-        fontSize: '1rem',
+        fontSize: '1.1rem',
       },
       '@media(min-width:600px) and (max-width:1100px)': {
-        fontSize: '0.7rem',
+        fontSize: '1.2rem',
       },
     },
     body1: {

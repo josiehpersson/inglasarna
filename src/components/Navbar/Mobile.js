@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {AppBar, Toolbar, List, ListItem, Typography, makeStyles, Grid, Drawer, IconButton, Button} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import {FiX} from 'react-icons/fi';
-import ResponsiveLogo from '../../img/responsiveLogotype.png';
+import ResponsiveLogo from '../../img/responsiveLogo.svg';
 
 const useStyles = makeStyles((theme) => ({
     navbar: {

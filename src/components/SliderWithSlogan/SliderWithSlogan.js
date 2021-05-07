@@ -86,12 +86,6 @@ export default function SliderWithSlogan() {
 
   return (
     <div className={classes.root}>
-      <Slogan
-        rootClass={classes.slogan}
-        glasClass={classes.sloganGlas}
-        logoClass={classes.sloganLogo}
-        textClass={classes.sloganText}
-      />
       <GridList className={classes.gridList} cols={12} rows={10}>
         <GridListTile className={classes.tile} cols={12} rows={10}>
           <Slide className={classes.tile} items={items} />
