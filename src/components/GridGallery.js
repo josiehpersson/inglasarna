@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Carousel from "react-material-ui-carousel";
-import { Modal, Container, Typography } from "@material-ui/core/";
-
+import {
+  Modal,
+  Container,
+  Typography,
+  Grid,
+  GridList,
+  GridListTile,
+} from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -15,14 +21,22 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     backdropFilter: "blur(3px)",
   },
-  carousel: {},
+
   img: {
+    height: "auto",
     maxHeight: "90vh",
     maxWidth: "100%",
   },
   rubrik: {
     fontSize: "24px",
     textAlign: "center",
+    marginBottom: theme.spacing(2),
+  },
+  galleryImage: {
+    objectFit: "cover",
+  },
+  gridList: {
+    justifyContent: "center",
   },
 }));
 
@@ -31,23 +45,30 @@ function GridGallery({ rubrik, images }) {
   const [open, setOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
   const handleClose = () => {
     setOpen(false);
+  };
+  const openLightbox = (index) => {
+    setCurrentImage(index);
+    setOpen(true);
   };
 
   return (
     <Container className={classes.container}>
       <Typography className={classes.rubrik}>{rubrik}</Typography>
-      <button type="button" onClick={handleOpen}>
-        Open Modal
-      </button>
 
-
-
-
+      <GridList cellHeight={250} className={classes.gridList} cols={3}>
+        {images.map((tile, index) => (
+          <GridListTile key={index} cols={1}>
+            <img
+              onClick={() => openLightbox(index)}
+              className={classes.galleryImage}
+              src={tile.src}
+              alt={tile.title}
+            />
+          </GridListTile>
+        ))}
+      </GridList>
 
       <Modal
         disableAutoFocus={true}
@@ -58,14 +79,20 @@ function GridGallery({ rubrik, images }) {
         aria-describedby="simple-modal-description"
       >
         <Carousel
+          index={currentImage}
           className={classes.carousel}
           autoPlay={false}
           navButtonsAlwaysVisible
           animation={"fade"}
           cycleNavigation={false}
         >
-          {images.map((image) => (
-            <img className={classes.img} src={image.src} alt={image.src}></img>
+          {images.map((image, index) => (
+            <img
+              className={classes.img}
+              src={image.src}
+              key={index}
+              alt={image.src}
+            ></img>
           ))}
         </Carousel>
       </Modal>

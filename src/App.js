@@ -1,19 +1,19 @@
 import InfoBox from "./components/InfoBoxes/InfoBox";
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer';
-import ContactBox from './components/ContactBoxes/ContactBox';
-import PhotoGrid from './components/PhotoGrid';
-import HowToStepper from './components/HowToStepper'
-import ContactForm from './components/ContactForm';
-import GridGallery from './components/GridGallery';
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer";
+import ContactBox from "./components/ContactBoxes/ContactBox";
+import PhotoGrid from "./components/PhotoGrid";
+import HowToStepper from "./components/HowToStepper";
+import ContactForm from "./components/ContactForm";
+import GridGallery from "./components/GridGallery";
 
-import { gridGalleryImages } from './assets/assets'
+import { gridGalleryImages } from "./assets/assets";
 
 import {
   makeStyles,
   ThemeProvider,
   createMuiTheme,
-} from '@material-ui/core/styles';
+} from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   palette: {
@@ -33,28 +33,28 @@ const theme = createMuiTheme({
     fontSize: 12,
     fontFamily: ["Spinnaker"],
     h1: {
-      fontSize: '2rem',
-      '@media(min-width:0px) and (max-width:600px)': {
-        fontSize: '0.8rem',
+      fontSize: "2rem",
+      "@media(min-width:0px) and (max-width:600px)": {
+        fontSize: "0.8rem",
       },
-      '@media(min-width:600px) and (max-width:900px)': {
-        fontSize: '1.5rem',
+      "@media(min-width:600px) and (max-width:900px)": {
+        fontSize: "1.5rem",
       },
     },
     subtitle1: {
-      fontSize: '1rem',
-      '@media(min-width:0px) and (max-width:600px)': {
-        fontSize: '1rem',
+      fontSize: "1rem",
+      "@media(min-width:0px) and (max-width:600px)": {
+        fontSize: "1rem",
       },
-      '@media(min-width:600px) and (max-width:1100px)': {
-        fontSize: '0.7rem',
+      "@media(min-width:600px) and (max-width:1100px)": {
+        fontSize: "0.7rem",
       },
     },
     body1: {
       fontSize: "1rem",
     },
     body2: {
-      fontSize: '0.8rem',
+      fontSize: "0.8rem",
     },
   },
   spacing: 8,
@@ -66,47 +66,45 @@ const theme = createMuiTheme({
     xl: 1920,
   },
 
-
   overrides: {
     MuiStepIcon: {
-     root: {
-       width: '38px',
-       height: '37px',
-       '&$completed': {
-         color: 'rgba(00,35,95, 0.5)',
-       },
-       '&$active': {
-         color: '#003595',
-       },
-       color: '#c4c4c4'
+      root: {
+        width: "38px",
+        height: "37px",
+        "&$completed": {
+          color: "rgba(00,35,95, 0.5)",
+        },
+        "&$active": {
+          color: "#003595",
+        },
+        color: "#c4c4c4",
       },
       text: {
-       color: '#fff',
-       fill: '#fff'
-      }
+        color: "#fff",
+        fill: "#fff",
+      },
     },
     MuiStepConnector: {
       vertical: {
-        marginLeft: '19px'
-      }
+        marginLeft: "19px",
+      },
     },
     MuiStepContent: {
       root: {
-        marginLeft: '19px',
-        paddingLeft: '40px',
-        color: '#000'
-      }
+        marginLeft: "19px",
+        paddingLeft: "40px",
+        color: "#000",
+      },
     },
     MuiStepLabel: {
       iconContainer: {
-        paddingRight: '16px'
+        paddingRight: "16px",
       },
       label: {
-        color: '#c4c4c4'
-      }
-    },
- }
-
+        color: "#c4c4c4",
+      },
+    }
+  },
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -122,18 +120,19 @@ function App() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-
       <div className={classes.root}>
         <Navbar />
         <ContactForm />
-        <GridGallery rubrik="Våra balkonginglasningar" images={gridGalleryImages} />
+        <GridGallery
+          rubrik="Våra balkonginglasningar"
+          images={gridGalleryImages}
+        />
         <ContactBox />
         <HowToStepper />
         <InfoBox />
         <PhotoGrid />
         <Footer />
       </div>
-
     </ThemeProvider>
   );
 }
