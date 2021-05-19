@@ -11,17 +11,12 @@ import {
 } from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(4),
-  },
   modal: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backdropFilter: "blur(3px)",
   },
-
   img: {
     height: "auto",
     maxHeight: "90vh",

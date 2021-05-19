@@ -103,7 +103,16 @@ const theme = createMuiTheme({
       label: {
         color: "#c4c4c4",
       },
-    }
+    },
+    MuiGridListTile: {
+      root: {
+        "&:hover": {
+          width: "100% !important",
+          height: "508px !important",
+          position: "relative",
+        },
+      },
+    },
   },
 });
 
