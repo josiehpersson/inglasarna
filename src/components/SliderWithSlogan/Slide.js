@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import { makeStyles } from '@material-ui/core';
+import { Box, Typography, makeStyles } from '@material-ui/core';
+import Logo from '../../img/logotyp.svg';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   carousel: {
     width: '100vw',
     overflow: 'hidden',
@@ -14,11 +15,17 @@ const useStyles = makeStyles(() => ({
     objectFit: 'cover',
     objectPosition: 'center bottom',
   },
+
 }));
 const Slide = (props) => {
   const classes = useStyles();
 
   return (
+    <Box sm={12}>
+      <Box className={classes.sloganContainer}>
+        <img src={Logo} alt="inglasarnas logotyp" className={classes.logo}/>
+        <Typography variant="h1" color="secondary">Vi kan inglasning</Typography>
+      </Box>
     <Carousel
       autoPlay={true}
       stopAutoPlayOnHover={false}
@@ -35,6 +42,8 @@ const Slide = (props) => {
         />
       ))}
     </Carousel>
+
+    </Box>
   );
 };
 export default Slide;

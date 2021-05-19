@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles, GridList, GridListTile } from '@material-ui/core';
+import { makeStyles, Grid, GridList, GridListTile } from '@material-ui/core';
 import Slogan from './Slogan';
 import Slide from './Slide';
-import { images as items } from '../assets/assets';
+import { images as items } from '../../assets/assets';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(4),
     width: '60vw',
     height: '60vh',
+    backdropFilter: "blur(4px)",
     [theme.breakpoints.between('xs', 'sm')]: {
       height: '10vh',
       width: '50vw',
@@ -80,17 +81,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PhotoGrid() {
+export default function SliderWithSlogan() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Slogan
-        rootClass={classes.slogan}
-        glasClass={classes.sloganGlas}
-        logoClass={classes.sloganLogo}
-        textClass={classes.sloganText}
-      />
       <GridList className={classes.gridList} cols={12} rows={10}>
         <GridListTile className={classes.tile} cols={12} rows={10}>
           <Slide className={classes.tile} items={items} />

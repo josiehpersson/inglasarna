@@ -10,7 +10,7 @@ import {
   MenuItem,
 } from '@material-ui/core';
 import { AiFillCaretDown } from 'react-icons/ai';
-import Logo from '../../img/logotype.png';
+import Logo from '../../img/logotyp.svg';
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {

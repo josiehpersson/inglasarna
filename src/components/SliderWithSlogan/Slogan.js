@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@material-ui/core';
-import Logo from '../img/logotype.png';
+import Logo from '../../img/logotyp.svg';
 
 const Slogan = (props) => {
   return (

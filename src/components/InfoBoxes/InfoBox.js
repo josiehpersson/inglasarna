@@ -12,19 +12,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap',
-    marginTop: theme.spacing(1.5),
-    marginBottom: theme.spacing(1.5)
-  },
-  item: {
-    margin: theme.spacing(0.7)
   },
 }));
 
 function InfoBox() {
   const classes = useStyles();
   return (
-    <Grid container className={classes.container}>
-      <Grid item className={classes.item}>
+    <Grid container xs={12} spacing={2} className={classes.container}>
+      <Grid item xs={12} className={classes.item}>
         <InfoCard
           img={infoBoxImg1}
           color="red"
@@ -33,7 +28,7 @@ function InfoBox() {
           rubrik="Rubrik"
         />
       </Grid>
-      <Grid item className={classes.item}>
+      <Grid item xs={12} className={classes.item}>
         <InfoCard
           img={infoBoxImg2}
           color="#333"
@@ -42,7 +37,7 @@ function InfoBox() {
           rubrik="Rubrik"
         />
       </Grid>
-      <Grid item className={classes.item}>
+      <Grid item  xs={12} className={classes.item}>
         <InfoCard
           img={infoBoxImg3}
           color="green"

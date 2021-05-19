@@ -1,16 +1,18 @@
-import InfoBox from "./components/InfoBoxes/InfoBox";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer";
-import ContactBox from "./components/ContactBoxes/ContactBox";
-import PhotoGrid from "./components/PhotoGrid";
-import HowToStepper from "./components/HowToStepper";
-import ContactForm from "./components/ContactForm";
-import GridGallery from "./components/GridGallery";
 
-import { gridGalleryImages } from "./assets/assets";
-
+import InfoBox from './components/InfoBoxes/InfoBox';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer';
+import ContactBox from './components/ContactBoxes/ContactBox';
+import ContactForm from './components/ContactForm';
+import TreColInfoBox from './components/TreColInfoBox/TreColInfoBox';
+import HowToStepper from './components/HowToStepper';
+import FinanceBox from './components/FinanceBox';
+import InfoboxWithImage from './components/InfoboxWithImage';
+import LumonBox from './components/LumonBox';
+import BoxFadedImg from './components/BoxFadedImg';
+import LinkBox from './components/LinkBox';
+import Start from './views/Start';
 import {
-  makeStyles,
   ThemeProvider,
   createMuiTheme,
 } from "@material-ui/core/styles";
@@ -18,40 +20,40 @@ import {
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#FFFFFF",
-      contrastText: "#003595",
+      main: '#FFFFFF',
+      contrastText: '#003595',
     },
     secondary: {
-      main: "#003595",
-      contrastText: "#FFFFFF",
+      main: '#003595',
+      contrastText: '#FFFFFF',
     },
     textPrimary: {
-      main: "#1C1C1C",
+      main: '#1C1C1C',
     },
   },
   typography: {
     fontSize: 12,
-    fontFamily: ["Spinnaker"],
+    fontFamily: ['Spinnaker'],
     h1: {
-      fontSize: "2rem",
-      "@media(min-width:0px) and (max-width:600px)": {
-        fontSize: "0.8rem",
+      fontSize: '2rem',
+      '@media(min-width:0px) and (max-width:600px)': {
+        fontSize: '1.5rem',
       },
-      "@media(min-width:600px) and (max-width:900px)": {
-        fontSize: "1.5rem",
+      '@media(min-width:600px) and (max-width:900px)': {
+        fontSize: '1.8rem',
       },
     },
     subtitle1: {
-      fontSize: "1rem",
-      "@media(min-width:0px) and (max-width:600px)": {
-        fontSize: "1rem",
+      fontSize: '1.3rem',
+      '@media(min-width:0px) and (max-width:600px)': {
+        fontSize: '1.1rem',
       },
-      "@media(min-width:600px) and (max-width:1100px)": {
-        fontSize: "0.7rem",
+      '@media(min-width:600px) and (max-width:1100px)': {
+        fontSize: '1.2rem',
       },
     },
     body1: {
-      fontSize: "1rem",
+      fontSize: '1rem',
     },
     body2: {
       fontSize: "0.8rem",
@@ -69,6 +71,7 @@ const theme = createMuiTheme({
   overrides: {
     MuiStepIcon: {
       root: {
+
         width: "38px",
         height: "37px",
         "&$completed": {
@@ -86,14 +89,13 @@ const theme = createMuiTheme({
     },
     MuiStepConnector: {
       vertical: {
-        marginLeft: "19px",
+        marginLeft: '19px',
       },
     },
     MuiStepContent: {
       root: {
-        marginLeft: "19px",
-        paddingLeft: "40px",
-        color: "#000",
+        marginLeft: '19px',
+        paddingLeft: '40px',
       },
     },
     MuiStepLabel: {
@@ -109,7 +111,6 @@ const theme = createMuiTheme({
         "&:hover": {
           width: "100% !important",
           height: "508px !important",
-          position: "relative",
         },
       },
     },
@@ -122,26 +123,23 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
     margin: 0,
     overflowX: "hidden",
+
+        paddingRight: '16px',
+      },
+      label: {
+        color: '#c4c4c4',
+      },
+    },
+
   },
-}));
+});
 
 function App() {
-  const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.root}>
         <Navbar />
-        <ContactForm />
-        <GridGallery
-          rubrik="Våra balkonginglasningar"
-          images={gridGalleryImages}
-        />
-        <ContactBox />
-        <HowToStepper />
-        <InfoBox />
-        <PhotoGrid />
+        <Start />
         <Footer />
-      </div>
     </ThemeProvider>
   );
 }
