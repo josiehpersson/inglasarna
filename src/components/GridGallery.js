@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Carousel from "react-material-ui-carousel";
 import {
+  makeStyles,
   Modal,
   Container,
-  Typography,
-  Grid,
   GridList,
   GridListTile,
-} from "@material-ui/core/";
+  Typography,
+} from "@material-ui/core";
+import Carousel from "react-material-ui-carousel";
+import { images } from "../assets/assets";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -22,8 +22,7 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "90vh",
     maxWidth: "100%",
   },
-  rubrik: {
-    fontSize: "24px",
+  title: {
     textAlign: "center",
     marginBottom: theme.spacing(2),
   },
@@ -35,64 +34,60 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function GridGallery({ rubrik, images }) {
+const GridGallery = (props) => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
+  const [open, setOpen] = useState();
+  const [currentImg, setCurrentImg] = useState(0);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const openLightbox = (index) => {
-    setCurrentImage(index);
+  const openLightBox = (index) => {
+    setCurrentImg(index);
     setOpen(true);
   };
 
   return (
     <Container className={classes.container}>
-      <Typography className={classes.rubrik}>{rubrik}</Typography>
-
-      <GridList cellHeight={250} className={classes.gridList} cols={3}>
-        {images.map((tile, index) => (
+      <Typography variant="h4" className={classes.title}>
+        {props.title || "Rubrik"}
+      </Typography>
+      <GridList cellHeight={250} cols={3} className={classes.gridList}>
+        {images.map((image, index) => (
           <GridListTile key={index} cols={1}>
             <img
-              onClick={() => openLightbox(index)}
+              onClick={() => openLightBox(index)}
               className={classes.galleryImage}
-              src={tile.src}
-              alt={tile.title}
+              src={image.image}
+              alt={image.title}
             />
           </GridListTile>
         ))}
       </GridList>
-
       <Modal
         disableAutoFocus={true}
         className={classes.modal}
         open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
+        onClose={() => setOpen(false)}
+        aria-labelledby="modal-gallery"
+        aria-describedby="modal-gallery"
       >
         <Carousel
-          index={currentImage}
+          index={currentImg}
           className={classes.carousel}
           autoPlay={false}
           navButtonsAlwaysVisible
-          animation={"fade"}
+          animation="fade"
           cycleNavigation={false}
         >
           {images.map((image, index) => (
             <img
               className={classes.img}
-              src={image.src}
+              src={image.image}
               key={index}
-              alt={image.src}
-            ></img>
+              alt={image.title}
+            />
           ))}
         </Carousel>
       </Modal>
     </Container>
   );
-}
-
+};
 export default GridGallery;

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, Grid, Typography, makeStyles } from '@material-ui/core';
+import React from "react";
+import { Button, Grid, Typography, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -7,13 +7,11 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2),
   },
 }));
-
 const FinanceBox = () => {
-  const classes = useStyles();
   return (
-    <Grid container spacing={3} xs={10} className={classes.container}>
+    <Grid container spacing={5}>
       <Grid item xs={10}>
-        <Typography variant="h1">Vi hjälper dig med finansiering</Typography>
+        <Typography variant="h4">Vi hjälper dig med finansiering</Typography>
       </Grid>
       <Grid item xs={10}>
         <Typography variant="body1">
@@ -27,7 +25,7 @@ const FinanceBox = () => {
         </Typography>
       </Grid>
       <Grid item xs={10}>
-        <Button variant="contained" color="secondary">
+        <Button variant="contained" color="primary">
           Räkna på finansiering
         </Button>
       </Grid>

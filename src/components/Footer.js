@@ -1,37 +1,45 @@
-import React from 'react'
-import {Typography, Box} from '@material-ui/core'
-import  { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import { Typography, Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundColor: '#f4f4f4',
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    margin: 0,
+    display: "flex",
+    flexFlow: "row nowrap",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    position: "static",
+    zIndex: 1100,
+    bottom: 0,
     padding: theme.spacing(4),
-    width: '100vw'
-  },
-  heading: {
-    marginBottom: "0.6rem"
-  }
-})); 
-
-export default function Footer() {
+    backgroundColor: '#003595',
+    color: '#FFFFFF' ,
+    width: '105vw',   
+},
+}));
+const Footer = () => {
   const classes = useStyles();
-  
   return (
-    <Box className={classes.container} md={12}>
+    <Grid container className={classes.container}>
+      <Grid item md={4}>
+        <Typography variant="subtitle1">
+          RUBRIK
+        </Typography>
+        <Typography variant="body1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
+          sodales nulla elementum.
+        </Typography>
+      </Grid>
+      <Grid item md={4}>
+        <Typography variant="subtitle1">
+          RUBRIK
+        </Typography>
+        <Typography variant="body1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
+          sodales nulla elementum.
+        </Typography>
+      </Grid>
+    </Grid>
+  );
+};
 
-    <Box className={classes.box1}>
-      <Typography variant="subtitle1" className={classes.heading}>KONTAKT</Typography>
-      <Typography variant="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra sodales nulla elementum.</Typography>
-    </Box>
-    
-    <Box className={classes.box2}>
-      <Typography variant="subtitle1" className={classes.heading}>FAQ</Typography>
-      <Typography variant="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra sodales nulla elementum.</Typography>
-    </Box>
-    </Box>
-  )
-}
+export default Footer;

@@ -1,39 +1,37 @@
 import React from "react";
-import { makeStyles, Box, Grid } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import SloganCarousel from "../components/SloganCarousel";
-import InfoBox from "../components/InfoBoxes/InfoBox";
-import TreColInfoBox from "../components/TreColInfoBox/TreColInfoBox";
-import ContactForm from "../components/ContactForm";
+import InfoIconCards from "../components/InfoIconCard/InfoIconCards";
+import ThreeColInfoBox from "../components/ThreeColInfoBox/ThreeColInfoBox";
+import ContactForm from "../components/Form/FormContainer";
+import RetailerInfoBox from "../components/RetailerInfoBox";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    flexFlow: "column wrap",
-    alignItems: "center",
     justifyContent: "center",
-    marginTop: theme.spacing(6),
-    marginLeft: 0,
-    marginRight: 0,
-    marginBottom: 0,
-    padding: 0,
+    alignItems: "center",
   },
 }));
 
 const Start = () => {
   const classes = useStyles();
   return (
-    <Grid container spacing={3} className={classes.container}>
-      <Grid item md={12}>
+    <Grid container spacing={10} className={classes.container}>
+      <Grid item xs={12}>
         <SloganCarousel />
       </Grid>
-      <Grid item md={10}>
-        <InfoBox />
+      <Grid item xs={9}>
+        <InfoIconCards />
       </Grid>
-      <Grid item md={10}>
-        <TreColInfoBox />
+      <Grid item xs={9}>
+        <ThreeColInfoBox />
       </Grid>
-      <Grid item md={10}>
+      <Grid item xs={9}>
         <ContactForm />
+      </Grid>
+      <Grid item xs={11}>
+        <RetailerInfoBox />
       </Grid>
     </Grid>
   );

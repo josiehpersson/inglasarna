@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, makeStyles, Grid } from "@material-ui/core";
 import Carousel from "react-material-ui-carousel";
 import { images } from "../assets/assets";
-import Logo from "../img/logotyp.svg";
+import Logo from "../assets/media/logotyp.svg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
