@@ -1,3 +1,5 @@
+
+import InfoBox from './components/InfoBoxes/InfoBox';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import Start from './views/Start';
@@ -5,6 +7,7 @@ import {
   ThemeProvider,
   createMuiTheme, makeStyles
 } from '@material-ui/core/styles';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -56,7 +59,7 @@ const theme = createMuiTheme({
       fontSize: '1rem',
     },
     body2: {
-      fontSize: '0.8rem',
+      fontSize: "0.8rem",
     },
   },
   spacing: 8,
@@ -71,19 +74,20 @@ const theme = createMuiTheme({
   overrides: {
     MuiStepIcon: {
       root: {
-        width: '38px',
-        height: '37px',
-        '&$completed': {
-          color: 'rgba(00,35,95, 0.5)',
+
+        width: "38px",
+        height: "37px",
+        "&$completed": {
+          color: "rgba(00,35,95, 0.5)",
         },
-        '&$active': {
-          color: '#003595',
+        "&$active": {
+          color: "#003595",
         },
-        color: '#c4c4c4',
+        color: "#c4c4c4",
       },
       text: {
-        color: '#fff',
-        fill: '#fff',
+        color: "#fff",
+        fill: "#fff",
       },
     },
     MuiStepConnector: {
@@ -95,17 +99,41 @@ const theme = createMuiTheme({
       root: {
         marginLeft: '19px',
         paddingLeft: '40px',
-        color: '#000',
       },
     },
     MuiStepLabel: {
       iconContainer: {
+        paddingRight: "16px",
+      },
+      label: {
+        color: "#c4c4c4",
+      },
+    },
+    MuiGridListTile: {
+      root: {
+        "&:hover": {
+          width: "100% !important",
+          height: "508px !important",
+        },
+      },
+    },
+  },
+});
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    paddingTop: theme.spacing(15),
+    padding: 0,
+    margin: 0,
+    overflowX: "hidden",
+
         paddingRight: '16px',
       },
       label: {
         color: '#c4c4c4',
       },
     },
+
   },
 });
 
