@@ -13,23 +13,26 @@ import { AiFillCaretDown } from 'react-icons/ai';
 import Logo from '../../img/logotyp.svg';
 
 const useStyles = makeStyles((theme) => ({
+  navbar: {
+    width: '100vw',
+    height: '10vh',
+    boxSizing: 'border-box',
+    '.MuiAppBar-root' : {
+      width: '100vw'
+    },
+  },
   navlinks: {
-    paddingRight: theme.spacing(5),
-    paddingLeft: theme.spacing(3),
     cursor: 'pointer',
     display: 'inline-flex',
     flexFlow: 'row no-wrap',
     alignItems: 'center',
     justifyContent: 'center',
     [theme.breakpoints.down('lg')]: {
-      paddingLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
     },
   },
   navbarBtn: {
     backgroundColor: theme.secondary,
     color: theme.primary,
-    marginRight: theme.spacing(1),
     marginLeft: 'auto',
     [theme.breakpoints.down('lg')]: {
       marginRight: theme.spacing(0),
@@ -37,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: '10vh',
-    margin: theme.spacing(1),
     [theme.breakpoints.down('lg')]: {
       height: '6vh',
     },
@@ -47,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
     flexFlow: 'row nowrap',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginRight: theme.spacing(2),
     marginLeft: 'auto',
   },
   caret: {

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Grid} from '@material-ui/core';
 import Mobile from './Mobile';
 import Desktop from './Desktop';
 
@@ -34,9 +35,9 @@ const Navbar = () => {
   }
 
   return(
-    <div>
+    <Grid container>
       {drawerActivate ? createDrawer() : destroyDrawer ()}
-    </div>
+    </Grid>
   )
 }
 

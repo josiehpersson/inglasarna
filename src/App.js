@@ -1,19 +1,9 @@
-import InfoBox from './components/InfoBoxes/InfoBox';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
-import ContactBox from './components/ContactBoxes/ContactBox';
-import ContactForm from './components/ContactForm';
-import TreColInfoBox from './components/TreColInfoBox/TreColInfoBox';
-import HowToStepper from './components/HowToStepper';
-import FinanceBox from './components/FinanceBox';
-import InfoboxWithImage from './components/InfoboxWithImage';
-import LumonBox from './components/LumonBox';
-import BoxFadedImg from './components/BoxFadedImg';
-import LinkBox from './components/LinkBox';
 import Start from './views/Start';
 import {
   ThemeProvider,
-  createMuiTheme,
+  createMuiTheme, makeStyles
 } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
@@ -51,6 +41,17 @@ const theme = createMuiTheme({
         fontSize: '1.2rem',
       },
     },
+    subtitle2: {
+      fontSize: '2rem',
+      '@media(min-width:0px) and (max-width:600px)': {
+        fontSize: '1rem',
+      },
+      '@media(min-width:600px) and (max-width:900px)': {
+        fontSize: '1.5rem',
+      },
+      //CUSTOM FÖR SLOGANSLIDER
+      
+    }, 
     body1: {
       fontSize: '1rem',
     },
@@ -62,7 +63,7 @@ const theme = createMuiTheme({
   breakpoints: {
     xs: 0,
     sm: 600,
-    md: 960,
+    md: 760,
     lg: 1280,
     xl: 1920,
   },
@@ -108,13 +109,26 @@ const theme = createMuiTheme({
   },
 });
 
+const useStyles = makeStyles((theme) => ({
+  container: {
+    margin: '0px !important',
+    padding: '0px !important',
+    width: '100vw',
+    overFlowX: 'hidden',
+    overflowY: 'hidden',
+  }
+}))
+
 function App() {
+  const classes = useStyles();
   return (
+    <div className={classes.container}>
     <ThemeProvider theme={theme}>
         <Navbar />
         <Start />
         <Footer />
     </ThemeProvider>
+    </div>
   );
 }
 
