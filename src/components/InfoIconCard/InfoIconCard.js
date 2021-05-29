@@ -49,7 +49,7 @@ const InfoIconCard = (props) => {
             </div>
             </Grid>
             <Grid item md={8}>
-                <Typography variant="h6">{props.rubrik}</Typography>
+                <Typography variant="h4">{props.rubrik}</Typography>
                 <Typography variant="body1">{props.text}</Typography>
             </Grid>
         </Grid>

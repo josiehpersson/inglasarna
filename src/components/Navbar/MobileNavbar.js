@@ -76,22 +76,22 @@ const MobileNavbar = () => {
           </IconButton>
           <List>
             <ListItem button divider>
-              <Typography variant="subtitle1" color="primary">
+              <Typography variant="h4" color="primary">
                 Varför inglasning?
               </Typography>
             </ListItem>
             <ListItem button divider>
-              <Typography variant="subtitle1" color="primary">
+              <Typography variant="h4" color="primary">
                 Hur går det till?
               </Typography>
             </ListItem>
             <ListItem divider className={classes.nestedListContainer}>
-              <Typography variant="subtitle1" color="primary">
+              <Typography variant="h4" color="primary">
                 Produkter
               </Typography>
               <List>
                 <ListItem button>
-                  <Typography variant="body1" color="textPrimary">
+                  <Typography variant="body§" color="textPrimary">
                     Balkong
                   </Typography>
                 </ListItem>
@@ -118,7 +118,7 @@ const MobileNavbar = () => {
               </List>
             </ListItem>
             <ListItem divider className={classes.nestedListContainer}>
-              <Typography variant="subtitle1" color="primary">
+              <Typography variant="h4" color="primary">
                 Kostnad
               </Typography>
               <List>
@@ -145,12 +145,12 @@ const MobileNavbar = () => {
               </List>
             </ListItem>
             <ListItem button divider>
-              <Typography variant="subtitle1" color="primary">
+              <Typography variant="h4" color="primary">
                 Galleri
               </Typography>
             </ListItem>
             <ListItem button divider>
-              <Typography variant="subtitle1" color="primary">
+              <Typography variant="h4" color="primary">
                 Kontakta oss
               </Typography>
             </ListItem>

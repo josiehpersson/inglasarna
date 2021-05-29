@@ -1,17 +1,11 @@
 import React from "react";
 import { Button, Grid, Typography, makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-  },
-}));
 const FinanceBox = () => {
   return (
     <Grid container spacing={5}>
       <Grid item xs={10}>
-        <Typography variant="h4">Vi hjälper dig med finansiering</Typography>
+        <Typography variant="h2">Vi hjälper dig med finansiering</Typography>
       </Grid>
       <Grid item xs={10}>
         <Typography variant="body1">

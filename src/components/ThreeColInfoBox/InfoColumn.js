@@ -17,7 +17,7 @@ const InfoColumn = (props) => {
   return (
     <Grid container spacing={5} className={classes.container}>
       <Grid item m={10}>
-        <Typography variant="h6">{props.rubrik}</Typography>
+        <Typography variant="h4">{props.rubrik}</Typography>
       </Grid>
       <Grid item m={10}>
         <Typography variant="body1">{props.text}</Typography>

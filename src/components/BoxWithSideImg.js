@@ -1,10 +1,11 @@
 import React from "react";
 import { Typography, makeStyles, Box } from "@material-ui/core";
+import {Parallax, Background} from 'react-parallax';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-      width: '80vw',
-      height: 'auto',
+      display: 'flex',
+      flexFlow: 'row',
   
       [theme.breakpoints.between('xs', 'sm')]: {
         display: 'flex',
@@ -14,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     image: {
-      height: 300,
-      width: 300,
+      height: 500,
+      width: 750,
       float: 'left',
       margin: theme.spacing(3),
       borderRadius: theme.spacing(4),
@@ -24,6 +25,12 @@ const useStyles = makeStyles((theme) => ({
         float: 'none',
       },
     },
+    textContainer: {
+      marginTop: theme.spacing(4),
+    },
+    heading: {
+      marginBottom: theme.spacing(4)
+    }
   }));
 
 const BoxWithSideImg = (props) => {
@@ -35,10 +42,13 @@ const BoxWithSideImg = (props) => {
       alt={props.imgAlt}
       className={classes.image}
     />
-    <Typography variant="h4">{props.title}</Typography>
+    <Box className={classes.textContainer}>
+    <Typography variant="h2" className={classes.heading}>{props.title}</Typography>
     <Typography variant="body1">
       {props.text}
     </Typography>
+
+    </Box>
   </Box>
   );
 };

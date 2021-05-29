@@ -138,4 +138,3 @@ export const images = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra sodales nulla elementum.",
     },
   ];
-  

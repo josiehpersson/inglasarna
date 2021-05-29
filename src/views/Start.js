@@ -21,13 +21,13 @@ const Start = () => {
       <Grid item xs={12}>
         <SloganCarousel />
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={11}>
         <InfoIconCards />
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={11}>
         <ThreeColInfoBox />
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={11}>
         <ContactForm />
       </Grid>
       <Grid item xs={11}>

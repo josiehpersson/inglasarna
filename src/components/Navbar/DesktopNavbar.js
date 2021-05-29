@@ -93,7 +93,7 @@ const DesktopNavbar = () => {
           >
             <Typography
               color="primary"
-              variant="subtitle1"
+              variant="h4"
               className={classes.text}
             >
               Information <AiFillCaretDown className={classes.caret} />
@@ -107,7 +107,7 @@ const DesktopNavbar = () => {
           >
             <Typography
               color="primary"
-              variant="subtitle1"
+              variant="h4"
               className={classes.text}
             >
               Produkter <AiFillCaretDown className={classes.caret} />
@@ -121,7 +121,7 @@ const DesktopNavbar = () => {
           >
             <Typography
               color="primary"
-              variant="subtitle1"
+              variant="h4"
               className={classes.text}
             >
               Kostnad <AiFillCaretDown className={classes.caret} />{" "}
@@ -130,7 +130,7 @@ const DesktopNavbar = () => {
           <ListItem button>
             <Typography
               color="primary"
-              variant="subtitle1"
+              variant="h4"
               className={classes.text}
             >
               Galleri
@@ -139,7 +139,7 @@ const DesktopNavbar = () => {
           <ListItem button>
             <Typography
               color="primary"
-              variant="subtitle1"
+              variant="h4"
               className={classes.text}
             >
               Kontakt
@@ -148,7 +148,7 @@ const DesktopNavbar = () => {
           <ListItem button>
             <Typography
               color="primary"
-              variant="subtitle1"
+              variant="h4"
               className={classes.text}
             >
               Gratis offert
