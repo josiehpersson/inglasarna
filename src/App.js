@@ -15,7 +15,7 @@ import Contact from './views/Contact';
 function App(props) {
   return (
     <ThemeProvider theme={theme}>
-      <Router>
+      <Router basename='/inglasarna/'>
         <NavbarContainer />
         <div style={{ padding: '5vh' }} />
         <BookingBtn />
