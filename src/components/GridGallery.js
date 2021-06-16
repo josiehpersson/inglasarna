@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   makeStyles,
   Modal,
@@ -6,31 +6,31 @@ import {
   GridList,
   GridListTile,
   Typography,
-} from "@material-ui/core";
-import Carousel from "react-material-ui-carousel";
-import { images } from "../assets/assets";
+} from '@material-ui/core';
+import Carousel from 'react-material-ui-carousel';
+import { images } from '../assets/assets';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backdropFilter: "blur(3px)",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backdropFilter: 'blur(3px)',
   },
   img: {
-    height: "auto",
-    maxHeight: "90vh",
-    maxWidth: "100%",
+    height: 'auto',
+    maxHeight: '90vh',
+    maxWidth: '100%',
   },
   title: {
-    textAlign: "center",
-    marginBottom: theme.spacing(2),
+    textAlign: 'center',
+    marginBottom: theme.spacing(5),
   },
   galleryImage: {
-    objectFit: "cover",
+    objectFit: 'cover',
   },
   gridList: {
-    justifyContent: "center",
+    justifyContent: 'center',
   },
 }));
 
@@ -46,11 +46,11 @@ const GridGallery = (props) => {
 
   return (
     <Container className={classes.container}>
-      <Typography variant="h4" className={classes.title}>
-        {props.title || "Rubrik"}
+      <Typography variant='h2' className={classes.title}>
+        {props.title || 'Rubrik'}
       </Typography>
       <GridList cellHeight={250} cols={3} className={classes.gridList}>
-        {images.map((image, index) => (
+        {props.images.map((image, index) => (
           <GridListTile key={index} cols={1}>
             <img
               onClick={() => openLightBox(index)}
@@ -66,15 +66,15 @@ const GridGallery = (props) => {
         className={classes.modal}
         open={open}
         onClose={() => setOpen(false)}
-        aria-labelledby="modal-gallery"
-        aria-describedby="modal-gallery"
+        aria-labelledby='modal-gallery'
+        aria-describedby='modal-gallery'
       >
         <Carousel
           index={currentImg}
           className={classes.carousel}
           autoPlay={false}
           navButtonsAlwaysVisible
-          animation="fade"
+          animation='fade'
           cycleNavigation={false}
         >
           {images.map((image, index) => (

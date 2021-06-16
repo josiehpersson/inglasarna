@@ -1,14 +1,14 @@
-import React from "react";
-import { Button, Grid, Typography, makeStyles } from "@material-ui/core";
+import React from 'react';
+import { Button, Grid, Typography, makeStyles } from '@material-ui/core';
 
 const FinanceBox = () => {
   return (
     <Grid container spacing={5}>
       <Grid item xs={10}>
-        <Typography variant="h2">Vi hjälper dig med finansiering</Typography>
+        <Typography variant='h2'>Vi hjälper dig med finansiering</Typography>
       </Grid>
       <Grid item xs={10}>
-        <Typography variant="body1">
+        <Typography variant='body1'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac justo
           commodo, malesuada odio vitae, euismod ante. Mauris quis sem laoreet,
           lacinia neque eget, venenatis ligula. Maecenas pharetra tincidunt
@@ -19,7 +19,7 @@ const FinanceBox = () => {
         </Typography>
       </Grid>
       <Grid item xs={10}>
-        <Button variant="contained" color="primary">
+        <Button variant='contained' color='primary'>
           Räkna på finansiering
         </Button>
       </Grid>
