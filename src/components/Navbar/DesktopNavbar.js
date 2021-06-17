@@ -68,7 +68,7 @@ const DesktopNavbar = (props) => {
 
   return (
     <Grid container className={classes.container}>
-      <Grid item md={2}>
+      <Grid item md={2} onClick={() => props.history.push('/')}>
         <img src={Logo} alt='inglasarnas logotyp' className={classes.logo} />
       </Grid>
       <Grid item md={10}>
