@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'white',
     height: '10vh',
     position: 'fixed',
+    top: 0,
     zIndex: 1100,
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   },
