@@ -7,7 +7,6 @@ import {
   StepLabel,
   StepContent,
   Button,
-  Paper,
   Typography,
 } from '@material-ui/core';
 

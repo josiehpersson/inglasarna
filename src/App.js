@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import Footer from './components/Footer';
 import BookingBtn from './components/BookingBtn';
-import ThreeColInfoBox from './components/ThreeColInfoBox/ThreeColInfoBox';
 import Start from './views/Start';
 import Prices from './views/Prices';
 import Products from './views/Products';

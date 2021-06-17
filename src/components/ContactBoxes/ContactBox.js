@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles, Grid, Typography } from '@material-ui/core';
-import { ViewColumn } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   container: {

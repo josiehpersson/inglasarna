@@ -1,5 +1,4 @@
 import React from 'react';
-import FadedImgBox from '../components/FadedImgBoxes/FadedImgBox';
 import CardWithBgImg from '../components/CardsWithBgImgs/CardWithBgImg';
 import RetailerInfoBox from '../components/RetailerInfoBox';
 import { fadedImgBoxes } from '../assets/assets';
