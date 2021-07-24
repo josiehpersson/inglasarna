@@ -1,35 +1,35 @@
-import React from 'react';
-import { Grid, Typography, makeStyles } from '@material-ui/core';
-import LumonLogo from '../assets/media/lumonlogo.png';
+import React from "react";
+import { Grid, Typography, makeStyles } from "@material-ui/core";
+import LumonLogo from "../assets/media/lumonlogo.png";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   textContainer: {
-    textAlign: 'center',
+    textAlign: "center",
   },
   lumonContainer: {
     backgroundImage: `url(${LumonLogo})`,
-    backgroundSize: 'contain',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    minHeight: '15vh',
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    minHeight: "15vh",
   },
 }));
 const RetailerInfoBox = () => {
   const classes = useStyles();
   return (
-    <Grid container spacing={3} className={classes.container}>
+    <Grid container className={classes.container}>
       <Grid item xs={10} className={classes.textContainer}>
-        <Typography variant='h3'>
+        <Typography variant="h3">
           Vi arbetar bara med produkter från de bästa företagen på marknaden!
         </Typography>
       </Grid>
       <Grid item xs={8} className={classes.textContainer}>
-        <Typography variant='body1'>
+        <Typography variant="body1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac justo
           commodo, malesuada odio vitae, euismod ante. Mauris quis sem laoreet,
           lacinia neque eget, venenatis ligula. Maecenas pharetra tincidunt
