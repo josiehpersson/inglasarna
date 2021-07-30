@@ -53,16 +53,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const DesktopNavbar = (props) => {
-  const [informationAnchor, setInformationAnchor] = useState(null);
+  const [productsAnchor, setProductsAnchor] = useState(null);
 
   const classes = useStyles();
 
-  const handleInformationClick = (e) => {
-    setInformationAnchor(e.currentTarget);
+  const handleProductsClick = (e) => {
+    setProductsAnchor(e.currentTarget);
   };
 
-  const handleInformationClose = (target) => {
-    setInformationAnchor(null);
+  const handleProductsClose = (target) => {
+    setProductsAnchor(null);
     props.history.push(target);
   };
 
@@ -75,17 +75,19 @@ const DesktopNavbar = (props) => {
         <List component='nav' className={classes.linkContainer}>
           <ListItem
             button
-            aria-controls='infoMenu'
-            aria-haspopup='true'
-            onClick={handleInformationClick}
+            onClick={() => props.history.push('/products')}
           >
             <Typography color='primary' variant='h4' className={classes.text}>
-              Information <AiFillCaretDown className={classes.caret} />
+              Varför inglasning?
             </Typography>
           </ListItem>
-          <ListItem button onClick={() => props.history.push('/products')}>
-            <Typography color='primary' variant='h4' className={classes.text}>
-              Produkter
+          <ListItem             
+            aria-controls='infoMenu'
+            aria-haspopup='true'
+            onClick={handleProductsClick}
+            button>
+            <Typography color='primary' variant='h4' className={classes.text} >
+              Produkter <AiFillCaretDown className={classes.caret} />
             </Typography>
           </ListItem>
           <ListItem button onClick={() => props.history.push('/prices')}>
@@ -113,17 +115,20 @@ const DesktopNavbar = (props) => {
       {/* INFORMATION-MENY */}
       <Menu
         id='infoMenu'
-        anchorEl={informationAnchor}
-        open={Boolean(informationAnchor)}
-        onClose={handleInformationClose}
+        anchorEl={productsAnchor}
+        open={Boolean(productsAnchor)}
+        onClose={handleProductsClose}
         TransitionComponent={Fade}
         className={classes.dropdownMenu}
       >
-        <MenuItem onClick={() => handleInformationClose('/how')}>
-          Hur går det till?
+        <MenuItem onClick={() => handleProductsClose('/products')}>
+          Balkonger
         </MenuItem>
-        <MenuItem onClick={() => handleInformationClose('/prices')}>
-          Vad kostar det?
+        <MenuItem onClick={() => handleProductsClose('/products')}>
+          Terasser
+        </MenuItem>
+        <MenuItem onClick={() => handleProductsClose('/products')}>
+          Tillbehör
         </MenuItem>
       </Menu>
     </Grid>
