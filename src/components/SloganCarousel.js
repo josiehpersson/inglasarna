@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, makeStyles, Grid } from "@material-ui/core";
 import Carousel from "react-material-ui-carousel";
-import { images } from "../assets/assets";
+import { carouselImages } from "../assets/assets";
 import Logo from "../assets/media/logotyp.svg";
 
 const useStyles = makeStyles((theme) => ({
@@ -42,15 +42,15 @@ const SloganCarousel = () => {
       interval={7000}
       className={classes.container}
     >
-      {images.map((image, i) => {
+      {carouselImages.map((image, i) => {
         return (
           <Grid
             container
             key={i}
             style={{
               background: `url(${image.image})`,
-              backgroundSize: "inherit",
-              backgroundPosition: "center",
+              backgroundSize: "100%",
+              backgroundPosition: "center bottom",
               backgroundRepeat: "no-repeat",
             }}
             className={classes.carouselImage}

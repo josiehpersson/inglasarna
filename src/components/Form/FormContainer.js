@@ -1,14 +1,15 @@
 import React from 'react';
 import {Grid, makeStyles} from '@material-ui/core';
 import ContactForm from './ContactForm';
+import contactImg from '../../assets/media/Kontaktform.jpg';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        backgroundImage: "url('https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-balkonginglasning-701.jpg?itok=l8oWvTok')",
+        backgroundImage: `url(${contactImg})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-        padding: theme.spacing(2),
+        padding: theme.spacing(4),
     }
 }));
 

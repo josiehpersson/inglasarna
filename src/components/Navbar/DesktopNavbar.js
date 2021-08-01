@@ -82,7 +82,7 @@ const DesktopNavbar = (props) => {
             </Typography>
           </ListItem>
           <ListItem             
-            aria-controls='infoMenu'
+            aria-controls='productsMenu'
             aria-haspopup='true'
             onClick={handleProductsClick}
             button>
@@ -114,7 +114,7 @@ const DesktopNavbar = (props) => {
       </Grid>
       {/* INFORMATION-MENY */}
       <Menu
-        id='infoMenu'
+        id='productsMenu'
         anchorEl={productsAnchor}
         open={Boolean(productsAnchor)}
         onClose={handleProductsClose}

@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import Carousel from 'react-material-ui-carousel';
-import { images } from '../assets/assets';
+import { carouselImages } from '../assets/assets';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -77,7 +77,7 @@ const GridGallery = (props) => {
           animation='fade'
           cycleNavigation={false}
         >
-          {images.map((image, index) => (
+          {carouselImages.map((image, index) => (
             <img
               className={classes.img}
               src={image.image}

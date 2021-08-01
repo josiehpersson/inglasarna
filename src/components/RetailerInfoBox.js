@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Typography, makeStyles } from '@material-ui/core';
-import LumonLogo from '../assets/media/lumonlogo.png';
+import LumonLogo from '../assets/media/LUMON_ORIGINAL.jpg';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -16,7 +16,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'contain',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    minHeight: '15vh',
+    minHeight: '5vw',
+    maxHeight: '10vw',
+    marginTop: '2vw',
   },
 }));
 const RetailerInfoBox = () => {
