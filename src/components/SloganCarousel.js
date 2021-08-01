@@ -7,6 +7,7 @@ import Logo from "../assets/media/logotyp.svg";
 const useStyles = makeStyles((theme) => ({
   container: {
     height: "70vh",
+    overflow: 'clip',
   },
   carouselImage: {
     height: "70vh",
@@ -49,7 +50,7 @@ const SloganCarousel = () => {
             key={i}
             style={{
               background: `url(${image.image})`,
-              backgroundSize: "100%",
+              backgroundSize: "cover",
               backgroundPosition: "center bottom",
               backgroundRepeat: "no-repeat",
             }}

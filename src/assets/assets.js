@@ -3,6 +3,7 @@ import carousel02 from './media/Carousel02.jpg';
 import carousel03 from './media/Carousel03.jpg';
 import carousel04 from './media/Carousel04.jpg';
 import carousel05 from './media/Carousel05.jpg';
+import productTerass from './media/ProductTerass.jpg';
 
 export const carouselImages = [
     {
@@ -74,26 +75,22 @@ export const carouselImages = [
       title: 'Balkong',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.',
       image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-balkonginglasning-39.jpg?itok=MeWhiwlz',
-    },
+      carousel01    },
     {
       title: 'Terass',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.',
       image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-03.jpg?itok=_-IHhWi3',
-    },
+      productTerass    },
     {
       title: 'Skjutdörrar',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.',
       image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-14jpg.jpg?itok=yHOO7ZyM',
-    },
+      carousel05    },
     {
       title: 'Tillbehör',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.',
       image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-08.jpg?itok=4UbY4m2D',
-    },
+      carousel03    },
   ];
 
   export const infoIconCards = [
