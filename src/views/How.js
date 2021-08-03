@@ -2,7 +2,7 @@ import React from "react";
 import HowToStepper from "../components/HowToStepper";
 import GridGallery from "../components/GridGallery";
 import FormContainer from "../components/Form/FormContainer";
-import { images } from "../assets/assets";
+import { carouselImages } from "../assets/assets";
 import { Grid, makeStyles } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 
@@ -43,7 +43,7 @@ const How = () => {
         <HowToStepper />
       </Grid>
       <Grid item xs={12} className={classes.marginContainer}>
-        <GridGallery images={images} title="Våra balkonginglasningar" />
+        <GridGallery images={carouselImages} title="Våra balkonginglasningar" />
       </Grid>
       <Grid item xs={12}>
         <FormContainer />

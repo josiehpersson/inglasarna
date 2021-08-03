@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { Button, Grid, Typography, } from '@material-ui/core';
-
-
+import { makeStyles } from '@material-ui/core/styles'
+import background from '../assets/media/Finansbox.jpeg'
 const useStyles = makeStyles((theme) => ({
   container : {
     background: `url(${background})`,

@@ -9,7 +9,7 @@ import {
 
 } from "@material-ui/core";
 import Carousel from "react-material-ui-carousel";
-import { images } from "../assets/assets";
+import { carouselImages } from "../assets/assets";
 
 
 const useStyles = makeStyles((theme) => ({

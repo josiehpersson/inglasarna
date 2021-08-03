@@ -1,6 +1,6 @@
 import React from "react";
 import GridGallery from "../components/GridGallery";
-import { images } from "../assets/assets";
+import { carouselImages } from "../assets/assets";
 import { Grid, makeStyles } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 
@@ -33,13 +33,13 @@ const Gallery = () => {
         </Typography>
       </Grid>
       <Grid item xs={12} className={classes.marginContainer}>
-        <GridGallery images={images} title="Rubrik1" />
+        <GridGallery images={carouselImages} title="Rubrik1" />
       </Grid>
       <Grid item xs={12} className={classes.marginContainer}>
-        <GridGallery images={images} title="Rubrik2" />
+        <GridGallery images={carouselImages} title="Rubrik2" />
       </Grid>
       <Grid item xs={12} className={classes.marginContainer}>
-        <GridGallery images={images} title="Rubrik3" />
+        <GridGallery images={carouselImages} title="Rubrik3" />
       </Grid>
     </Grid>
   );

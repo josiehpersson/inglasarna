@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const DesktopNavbar = (props) => {
 
-  const [informationAnchor, setInformationAnchor] = useState(null);
+  const [productsAnchor, setProductsAnchor] = useState(null);
   const [kontaktAnchor, setKontaktAnchor] = useState(null);
 
 
@@ -66,11 +66,11 @@ const DesktopNavbar = (props) => {
   };
 
 
-  const handleInformationClose = () => {
-    setInformationAnchor(null);
+  const handleProductsClose = () => {
+    setProductsAnchor(null);
   };
-  const handleInformationPush = (target) => {
-    setInformationAnchor(null);
+  const handleProductsPush = (target) => {
+    setProductsAnchor(null);
     props.history.push({
       pathname: target,
     });
@@ -100,7 +100,7 @@ const DesktopNavbar = (props) => {
 
             aria-controls="infoMenu"
             aria-haspopup="true"
-            onClick={handleInformationClick}
+            onClick={handleProductsClick}
           >
             <Typography color="primary" variant="h4" className={classes.text}>
               Information <AiFillCaretDown className={classes.caret} />
@@ -142,16 +142,16 @@ const DesktopNavbar = (props) => {
       <Menu
 
         id="infoMenu"
-        anchorEl={informationAnchor}
-        open={Boolean(informationAnchor)}
-        onClose={handleInformationClose}
+        anchorEl={productsAnchor}
+        open={Boolean(productsAnchor)}
+        onClose={handleProductsClose}
         TransitionComponent={Fade}
         className={classes.dropdownMenu}
       >
-        <MenuItem onClick={() => handleInformationPush("/how")}>
+        <MenuItem onClick={() => handleProductsPush("/how")}>
           Hur går det till?
         </MenuItem>
-        <MenuItem onClick={() => handleInformationPush("/prices")}>
+        <MenuItem onClick={() => handleProductsPush("/prices")}>
           Vad kostar det?
         </MenuItem>
       </Menu>
