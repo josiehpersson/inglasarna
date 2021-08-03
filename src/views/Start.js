@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const Start = () => {
   const classes = useStyles();
   return (
-    <Grid container spacing={10} className={classes.container}>
+    <Grid container className={classes.container}>
       <Grid item xs={12}>
         <SloganCarousel />
       </Grid>

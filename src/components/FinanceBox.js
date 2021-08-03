@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Grid, Typography, makeStyles } from '@material-ui/core';
-import background from '../assets/media/Carousel01.jpg';
+
+import { Button, Grid, Typography, } from '@material-ui/core';
+
 
 const useStyles = makeStyles((theme) => ({
   container : {
