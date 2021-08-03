@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.between("xs", "sm")]: {
       float: "none",
-
+      width: "100%",
+      height: "auto",
     },
   },
   textContainer: {

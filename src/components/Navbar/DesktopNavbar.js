@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-between",
     position: "fixed",
-
+    top: 0,
+    left: 0,
     zIndex: 1100,
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   },
