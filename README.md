@@ -1,3 +1,6 @@
+# Preview of Inglasarna
+https://60cb257a8f29f00008c72970--vigilant-kirch-c898e8.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,3 +1,4 @@
+
 import { ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./assets/theme";
 import { Container } from "@material-ui/core";
@@ -11,6 +12,7 @@ import Products from "./views/Products";
 import How from "./views/How";
 import Gallery from "./views/Gallery";
 import Contact from "./views/Contact";
+
 
 function App(props) {
   return (

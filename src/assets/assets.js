@@ -1,33 +1,30 @@
-export const images = [
+import carousel01 from './media/Carousel01.jpg';
+import carousel02 from './media/Carousel02.jpg';
+import carousel03 from './media/Carousel03.jpg';
+import carousel04 from './media/Carousel04.jpg';
+import carousel05 from './media/Carousel05.jpg';
+import productTerass from './media/ProductTerass.jpg';
+
+export const carouselImages = [
     {
-      title: 'Inglasning balkong, vinter, julgran i inglasningen.',
-      image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-balkonginglasning-39.jpg?itok=MeWhiwlz',
+      title: 'Solnedgång, inglasad balkong.',
+      image: carousel01
     },
     {
-      title: 'Inglasning balkong, sommar, frukost på balkongen.',
-      image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-03.jpg?itok=_-IHhWi3',
+      title: 'Lägenhetshus, inglasad balkong.',
+      image:carousel02
     },
     {
-      title: 'Inglasning balkong, vinter, utsikt över vatten i skymning.',
-      image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-14jpg.jpg?itok=yHOO7ZyM',
+      title: 'Inglasat rum, inglasad balkong.',
+      image: carousel03
     },
     {
       title: 'Inglasning altan, sommar, utsikt över vatten.',
-      image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-08.jpg?itok=4UbY4m2D',
+      image: carousel04
     },
     {
-      title: 'Inglasning balkong, stor matgrupp.',
-      image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-balkonginglasning-31.jpg?itok=AUAx3k-e',
-    },
-    {
-      title: 'Inglasning balkong, barbord, färgglatt.',
-      image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-balkonginglasning-29.jpg?itok=L757bUL6',
+      title: 'Inglasning altan, vinter',
+      image:carousel05
     },
   ];
 
@@ -54,26 +51,23 @@ export const images = [
       title: "Rubrik1",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.",
       image:
-        "url('https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/bygga_uterum_-_lumon_balkonginglasningar.jpg?itok=wwELYlcC')",
+        `url(${carousel01})`,
     },
     {
       title: "Rubrik2",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.",
-      image:
-        "url('https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-balkonginglasning72.jpg?itok=jcC-m9Q4')",
+      image:`url(${carousel02})`
     },
     {
       title: "Rubrik3",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.",
       image:
-        "url('https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-balkonginglasning-681.jpg?itok=zjnBUbME')",
-    },
+      `url(${carousel03})`    },
     {
       title: "Rubrik4",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.",
       image:
-        "url('https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-12.jpg?itok=2JhocsBi')",
-    },
+      `url(${carousel04})`    },
   ];
 
   export const fadedImgBoxes = [
@@ -81,26 +75,22 @@ export const images = [
       title: 'Balkong',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.',
       image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-balkonginglasning-39.jpg?itok=MeWhiwlz',
-    },
+      carousel01    },
     {
       title: 'Terass',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.',
       image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-03.jpg?itok=_-IHhWi3',
-    },
+      productTerass    },
     {
       title: 'Skjutdörrar',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.',
       image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-14jpg.jpg?itok=yHOO7ZyM',
-    },
+      carousel05    },
     {
       title: 'Tillbehör',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra orci fermentum dictum convallis fermentum eget dictum urna. Quis lacus facilisis iaculis vitae. Turpis nulla volutpat nisi dui mi. Eu in donec quam feugiat aliquet ultrices consectetur sem. Vestibulum in.',
       image:
-        'https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-08.jpg?itok=4UbY4m2D',
-    },
+      carousel03    },
   ];
 
   export const infoIconCards = [

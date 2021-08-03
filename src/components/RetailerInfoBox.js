@@ -13,10 +13,12 @@ const useStyles = makeStyles((theme) => ({
   },
   lumonContainer: {
     backgroundImage: `url(${LumonLogo})`,
+
     backgroundSize: "contain",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     minHeight: "15vh",
+
   },
 }));
 const RetailerInfoBox = () => {

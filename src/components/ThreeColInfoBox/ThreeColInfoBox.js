@@ -3,8 +3,7 @@ import { Grid, makeStyles, Typography } from "@material-ui/core";
 import {Parallax} from 'react-parallax';
 import InfoColumn from "./InfoColumn";
 import {threeColInfoBoxes} from '../../assets/assets';
-
-const background = "https://lumon.com/sites/default/files/styles/large_gallery/public/images/sv/lumon-inglasad-balkong-03.jpg?itok=_-IHhWi3";
+import background from '../../assets/media/Carousel03.jpg';
 
 const useStyles = makeStyles((theme) => ({
   container: {

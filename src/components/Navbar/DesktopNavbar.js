@@ -15,6 +15,7 @@ import Logo from "../../assets/media/logotyp.svg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
+
     backgroundColor: "white",
     height: "10vh",
     display: "flex",
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-between",
     position: "fixed",
+
     zIndex: 1100,
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   },
@@ -52,14 +54,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const DesktopNavbar = (props) => {
+
   const [informationAnchor, setInformationAnchor] = useState(null);
   const [kontaktAnchor, setKontaktAnchor] = useState(null);
 
+
   const classes = useStyles();
 
-  const handleInformationClick = (e) => {
-    setInformationAnchor(e.currentTarget);
+  const handleProductsClick = (e) => {
+    setProductsAnchor(e.currentTarget);
   };
+
 
   const handleInformationClose = () => {
     setInformationAnchor(null);
@@ -92,6 +97,7 @@ const DesktopNavbar = (props) => {
         <List component="nav" className={classes.linkContainer}>
           <ListItem
             button
+
             aria-controls="infoMenu"
             aria-haspopup="true"
             onClick={handleInformationClick}
@@ -134,6 +140,7 @@ const DesktopNavbar = (props) => {
       </Grid>
       {/* INFORMATION-MENY */}
       <Menu
+
         id="infoMenu"
         anchorEl={informationAnchor}
         open={Boolean(informationAnchor)}

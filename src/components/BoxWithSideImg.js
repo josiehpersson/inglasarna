@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Typography, makeStyles, Box } from "@material-ui/core";
 
@@ -11,17 +12,21 @@ const useStyles = makeStyles((theme) => ({
       flexFlow: "column",
       alignItems: "center",
       justifyContent: "center",
+
+
     },
   },
   image: {
     height: 500,
     width: 750,
+
     float: "left",
     margin: theme.spacing(3),
     borderRadius: theme.spacing(4),
 
     [theme.breakpoints.between("xs", "sm")]: {
       float: "none",
+
     },
   },
   textContainer: {
